@@ -52,6 +52,7 @@ public class Animal {
         this.greutate = greutate;
     }
 
+    //TODO Write more comments
     public boolean isIerbivor() {
         return isIerbivor;
     }

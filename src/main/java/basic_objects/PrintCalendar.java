@@ -1,5 +1,7 @@
 package basic_objects;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 public class PrintCalendar {
@@ -7,19 +9,12 @@ public class PrintCalendar {
      * Main method
      */
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Date date= new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+//        calendar.set(2000, 10, 1);
 
-        // Prompt the user to enter year
-        System.out.print("Enter full year (e.g., 2001): ");
-        int year = input.nextInt();
-
-        // Prompt the user to enter month
-        System.out.print("Enter month in number between 1 and 12: ");
-        int month = input.nextInt();
-
-        // Print calendar for the month of the year
-        printMonth(year, month);
-        input.close();
+        printMonth(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH));
     }
 
     /**
@@ -37,7 +32,7 @@ public class PrintCalendar {
      * Print the month title, e.g., May, 1999
      */
     public static void printMonthTitle(int year, int month) {
-        System.out.println("         " + getMonthName(month) + " " + year);
+        System.out.println(" " + getMonthName(month) + " " + year);
         System.out.println("-----------------------------");
         System.out.println(" Sun Mon Tue Wed Thu Fri Sat");
     }
@@ -139,6 +134,7 @@ public class PrintCalendar {
 
         return 0; // If month is incorrect
     }
+
 
     /**
      * Determine if it is a leap year
