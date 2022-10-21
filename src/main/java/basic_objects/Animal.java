@@ -25,7 +25,7 @@ public class Animal {
     /**
      * Constructorul default
      * @param greutate greutatea animalului
-     * @param isIerbivor daca este ierbivor sau nu
+     * @param isIerbivor daca animalul este ierbivor sau nu
      * @param culoare culoarea animalului
      * @param denumire denumirea animalului
      */
@@ -41,24 +41,22 @@ public class Animal {
         this(greutate, isIerbivor, Color.PINK, denumire);
     }
 
+    //TODO Write more comments
+
     public long getGreutate() {
         return greutate;
     }
 
-    /**
-     * @param greutate greutatea animalului nostru
-     */
     public void setGreutate(long greutate) {
         this.greutate = greutate;
     }
 
-    //TODO Write more comments
     public boolean isIerbivor() {
         return isIerbivor;
     }
 
-    public void setIerbivor(boolean isIerbivor) {
-        this.isIerbivor = isIerbivor;
+    public void setIerbivor(boolean ierbivor) {
+        isIerbivor = ierbivor;
     }
 
     public Color getCuloare() {
@@ -69,45 +67,48 @@ public class Animal {
         this.culoare = culoare;
     }
 
-    public String getDenumire() {
-        return denumire;
-    }
-
-    public void setDenumire(String denumire) {
-        this.denumire = denumire;
-    }
-
-    public int getNrAnimale() {
-        return Animal.nrAnimale;
-    }
-
     @Override
+    /**
+     * @return o reprezentare a obiectului sub forma de string
+     */
     public String toString() {
         return this.denumire;
+    }
+
+    public static void sterge1Animal() {
+        nrAnimale--;
     }
 
     @Override
     protected void finalize() throws Throwable {
         //solution - use Cleaner
-        //nrAnimale--;
+//        nrAnimale--;
     }
 
     public static void main(String[] args) throws Throwable {
         System.out.println(nrAnimale);
         Animal rinocer = new Animal(200, true, "rinocer");
 
-        Animal veverita = new Animal(2, true, Color.BLUE, "super veverita");
-//        {
-//            public String toString() {
-//                return "veverita super super super cool";
-//            }
-//        };
+        Animal veverita = new Animal(2, true, Color.BLUE, "super veverita")  {
+            public void anaAreMere() {
+                System.out.println("Ana are mere");
+            }
+            public String toString() {
+                anaAreMere();
+                return "supe super super veverita";
+            }
+        };
 
-        System.out.println(rinocer + " " + veverita + " " + veverita);
+        Animal cangur = new Animal(100, true, "Kangur");
+
+        System.out.println(rinocer + " " + veverita + " " + cangur);
         System.out.println(nrAnimale);
 
-        for (int i = 0; i < 1000000; i++)
-            rinocer = new Animal(200, true, "rinocer");
+        Animal animal;
+        for (int i = 0; i < 1000000; i++) {
+            animal = new Animal(200, true, "rinocer");
+            Animal.sterge1Animal();
+        }
         System.out.println(nrAnimale);
     }
 }

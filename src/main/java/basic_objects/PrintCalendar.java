@@ -2,7 +2,6 @@ package basic_objects;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Scanner;
 
 public class PrintCalendar {
     /**
@@ -11,8 +10,8 @@ public class PrintCalendar {
     public static void main(String[] args) {
         Date date= new Date();
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-//        calendar.set(2000, 10, 1);
+//        calendar.setTime(date);
+        calendar.set(2000, 10, 1);
 
         printMonth(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH));
     }

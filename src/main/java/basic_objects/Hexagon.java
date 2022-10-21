@@ -1,6 +1,7 @@
 package basic_objects;
 
 public class Hexagon {
+
 	static int no1, no2;
 
 	static {
@@ -8,9 +9,13 @@ public class Hexagon {
 		no2 = 5;
 	}
 
+	static {
+		no1 = 5;
+		no2 = 6;
+	}
+
 	int latura;
 	int diagonala;
-	String text;
 
 	/**
 	 * Constructorul implicit
@@ -18,18 +23,17 @@ public class Hexagon {
 	 * @param diagonala
 	 */
 	public Hexagon(int latura, int diagonala) {
-		super();
 		this.latura = latura;
 		this.diagonala = diagonala;
-		no1 += this.latura;
+		no1 ++;
 	}
 
-	public Hexagon() {
+	public int getLatura() {
+		return latura;
 	}
 
 	public static void schimbaCeva(Hexagon[] h) {
-		Hexagon h2 = new Hexagon();
-		h2.setLatura(h[0].getLatura() * 2);
+		Hexagon h2 = new Hexagon(2,2);
 		h[0] = h2;
 	}
 
@@ -45,21 +49,10 @@ public class Hexagon {
 
 		Hexagon.schimbaCeva(vect);
 		System.out.println(vect[0].getLatura());
+		System.out.println(no1+ " " + no2);
 
 		String text = "LA";
 		schimbaCeva2(text);
 		System.out.println(text);
-	}
-
-	int getPerimetru() {
-		return 6 * latura;
-	}
-
-	public int getLatura() {
-		return latura;
-	}
-
-	public void setLatura(int latura2) {
-		latura = latura2;
 	}
 }

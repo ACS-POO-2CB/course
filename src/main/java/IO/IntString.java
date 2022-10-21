@@ -1,4 +1,4 @@
-package basic_objects;
+package IO;
 
 public class IntString {
     private int x;
