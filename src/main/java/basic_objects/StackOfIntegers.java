@@ -1,5 +1,7 @@
 package basic_objects;
 
+import java.util.Arrays;
+
 public class StackOfIntegers {
 	private int[] elements;
 	private int size;
@@ -32,11 +34,22 @@ public class StackOfIntegers {
 		return size;
 	}
 
+	@Override
+	public String toString() {
+		return "StackOfIntegers{" +
+				"elements=" + Arrays.toString(elements) +
+				", size=" + size +
+				'}';
+	}
+
 	public static void main(String[] args) {
 		StackOfIntegers stack = new StackOfIntegers(3);
 		System.out.println(stack.push(1));
 		System.out.println(stack.push(2));
 		System.out.println(stack.pop());
 		System.out.println(stack.push(4));
+		System.out.println(stack);
 	}
+
+
 }
