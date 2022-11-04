@@ -4,6 +4,9 @@ public class TestGeometricObject {
     /**
      * Main method
      */
+
+    String s = "abc";
+
     public static void main(String[] args) {
         // Declare and initialize two geometric objects
         Circle geoObject1 = new Circle(5);

@@ -18,19 +18,24 @@ class Sub extends Super {
     static {
         System.out.print("Sub ");
     }
-//    public static void doSomething() {
-//        System.out.println("Ne-am razgandit si nu mai facem!");
-//    }
+
+    public static void doSomething() {
+        System.out.println("Ne-am razgandit si nu mai facem!");
+    }
 }
 
 public class StaticTest {
     public static void main(String[] args) {
+        Sub s= null;
+        System.out.println("Fluffy");
 //        System.out.println(Super.no);
 //        System.out.println(Sub.no);
 
+        //try this block instead of the above two lines
 //        Sub.doSomething();
 
-//        new Sub();
-//        new Sub();
+        //or this block instead of the above lines
+        new Sub();
+        new Sub();
     }
 }
