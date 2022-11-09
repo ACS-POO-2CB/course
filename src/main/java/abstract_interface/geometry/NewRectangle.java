@@ -1,5 +1,7 @@
 package abstract_interface.geometry;
 
+import java.util.Objects;
+
 public class NewRectangle extends AbstractGeometricObject {
     private double width;
     private double height;
@@ -43,6 +45,19 @@ public class NewRectangle extends AbstractGeometricObject {
     @Override
     public double getArea() {
         return width * height;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NewRectangle that = (NewRectangle) o;
+        return Double.compare(that.width, width) == 0 && Double.compare(that.height, height) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(width, height);
     }
 
     /**

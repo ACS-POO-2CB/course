@@ -63,14 +63,14 @@ public class House implements Cloneable, Comparable<House> {
             return 0;
     }
 
-//    protected Object clone() throws CloneNotSupportedException {
-//        // Perform a shallow copy
-//        House obj = (House) super.clone();
-//        // Deep copy on whenBuilt
-//        obj.setWhenBuilt(new Date());
-//        obj.setId(obj.getId()+1);
-//        return obj;
-//    }
+    protected Object clone() throws CloneNotSupportedException {
+        // Perform a shallow copy
+        House obj = (House) super.clone();
+        // Deep copy on whenBuilt
+        obj.setWhenBuilt(new Date());
+        obj.setId(obj.getId()+1);
+        return obj;
+    }
 
     public static void main(String[] args) throws Exception {
         House house1 = new House(1, 1750.50);

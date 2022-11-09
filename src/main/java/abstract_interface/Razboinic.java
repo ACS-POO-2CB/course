@@ -10,6 +10,7 @@ interface Erou {
 }
 
 interface Spartan {
+    //TODO change to default or even return void
     private String getStrigatDeLupta() {
         return "This is Spartaaaa!";
     }
@@ -27,6 +28,6 @@ public class Razboinic implements Erou, Spartan{
         Razboinic r= new Razboinic();
         System.out.println(r.getStrigatDeLupta());
         System.out.println(r.getStrigat());
-        System.out.println(Spartan.activeazaAuraSabiei());
+        System.out.println(Erou.activeazaAuraSabiei());
     }
 }
