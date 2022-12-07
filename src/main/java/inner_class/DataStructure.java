@@ -32,6 +32,11 @@ public class DataStructure {
 
     private class EvenIterator implements DataStructureIterator {
         private int nextIndex = 0;
+        static int noInterators;
+
+        public EvenIterator() {
+            noInterators++;
+        }
 
         public boolean hasNext() {
             return (nextIndex <= SIZE - 1);
@@ -48,5 +53,6 @@ public class DataStructure {
         DataStructure ds = new DataStructure();
         ds.printEven();
         ds.getIterator();
+        System.out.println("Number of iterators: " + EvenIterator.noInterators);
     }
 }

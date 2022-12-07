@@ -19,23 +19,34 @@ public class HelloWorldAnonymousClasses {
                     public void greetSomeone(String someone) {
                         System.out.println("Hello " + someone);
                     }
-                }, new HelloWorld() {
+                },
+                new HelloWorld() {
                     public void greet() {
-                greetSomeone("Bonsoir tout le monde!");
-            }
+                        greetSomeone("Bonsoir tout le monde!");
+                    }
 
                     public void greetSomeone(String someone) {
-                System.out.println("Bonsoir " + someone);
-            }
-                }, new HelloWorld() {
+                        System.out.println("Bonsoir " + someone);
+                    }
+                },
+                new HelloWorld() {
                     public void greet() {
-                greetSomeone("Hola a todas!");
-            }
+                        greetSomeone("Hola a todas!");
+                    }
 
                     public void greetSomeone(String someone) {
-                System.out.println("Hola " + someone);
-            }
-            }}) {
+                        System.out.println("Hola " + someone);
+                    }
+                },
+                new HelloWorld() {
+                    public void greet() {
+                        greetSomeone("Bună seara!");
+                    }
+
+                    public void greetSomeone(String someone) {
+                        System.out.println("Salut " + someone);
+                    }
+                }}) {
             hw.greetSomeone(name);
         }
     }

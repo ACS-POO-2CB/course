@@ -1,60 +1,66 @@
 package inner_class;
 
 class A {
-	int x;
-	static int y;
+    int x;
+    static int y;
 
-	@Override
-	public String toString() {
-		return "A [x=" + x + "]";
-	}
+    @Override
+    public String toString() {
+        return "A [x=" + x + "]";
+    }
 
-	class B extends A {
-		int x;
-		static int y; // not- allowed here
+    class B extends A {
+        int x;
+        static int y; // not allowed here
+        static int z;
 
-		public B(int x) {
-			this.x = 2 * x;
-			A.this.x = 3 * x;
-		}
 
-		@Override
-		public String toString() {
-			return "B [x=" + this.x + "]";
-		}
-	}
+        public B(int x) {
+            this.x = 2 * x;
+            A.this.x = 3 * x;
+        }
 
-	static class C{
-		int x;
-		static int y; // allowed here
+        static void print() {
+            System.out.println(y+z);
+        }
+        @Override
+        public String toString() {
+            return "B [x=" + this.x + "]";
+        }
+    }
 
-		public C(int x) {
-			this.x = 2 * x;
-			y++;
-			A.y = 3 * y;
-		}
+    static class C {
+        int x;
+        static int y; // allowed here
 
-		@Override
-		public String toString() {
-			return "C [x=" + x + "]";
-		}
-	}
+        public C(int x) {
+            this.x = 2 * x;
+            y++;
+            A.y = 3 * y;
+        }
+
+        @Override
+        public String toString() {
+            return "C [x=" + x + "]";
+        }
+    }
 
 }
 
 public class StaticExample {
-	public static void main(String[] str) {
-		A a = new A();
-		// need of inclosing instance
-		A.B obj1 = a.new B(1);
-		System.out.println(obj1);
+    public static void main(String[] str) {
+        A a = new A();
+        // need of enclosing instance
+//        A.B obj1 = a.new B(1);
+//        System.out.println(obj1);
+        System.out.println(A.B.y);
 
-		// no need of reference of object of outer class
-		A.C obj2 = new A.C(1);
-		System.out.println(obj2);
-		A.C obj3 = new A.C(2);
-		System.out.println(obj3);
+        // no need of reference of object of outer class
+        A.C obj2 = new A.C(1);
+        System.out.println(obj2);
+        A.C obj3 = new A.C(2);
+        System.out.println(obj3);
 
-		System.out.println(A.y + " " + A.C.y);
-	}
+        System.out.println(A.y + " " + A.C.y);
+    }
 }
