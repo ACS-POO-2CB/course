@@ -1,5 +1,7 @@
 package generics;
 
+import abstract_interface.geometry.AbstractGeometricObject;
+
 class X {
     int x;
 
@@ -8,7 +10,7 @@ class X {
     }
 
     public <X> X(X x) {
-        this.x = -1;
+        this.x = 1;
     }
 
     public <X> X X(X x) {

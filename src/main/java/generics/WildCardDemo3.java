@@ -1,9 +1,9 @@
 package generics;
 
-public class  WildCardDemo3 {
+public class  WildCardDemo3{
 	public static void main(String[] args) {
-		GenericStack<String> stack1 = new GenericStack<String>();
-		GenericStack<Object> stack2 = new GenericStack<Object>();
+		GenericStack<String> stack1 = new GenericStack();
+		GenericStack<Object> stack2 = new GenericStack();
 
 		stack2.push("Java");
 		stack2.push(2);
