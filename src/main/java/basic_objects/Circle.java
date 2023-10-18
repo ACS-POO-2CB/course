@@ -1,34 +1,53 @@
 package basic_objects;
 
-class Circle {
-    /**
-     * The radius of this circle
-     */
+public class Circle {
+    // The radius of this circle
     double radius;
-    String culoare;
+    String color;
 
-    public Circle(float radius, String culoare) {
+    public Circle(double radius, String color) {
         this.radius = radius;
-        this.culoare = culoare;
+        this.color = color;
+    }
+
+    public Circle(float radius, String color) {
+        this((double) radius, color);
     }
 
     public Circle() {
-        this(1, "albastru");
+        this(1, "blue");
     }
 
-    public Circle(double radius, String culoare) {
-        this();
+    public Circle(double radius) {
+        this(1, "green");
     }
+
 
     double getArea() {
-        return radius * radius * 3.14159;
+        return Math.PI*Math.pow(radius, 2);
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     @Override
     public String toString() {
         return "Circle{" +
                 "radius=" + radius +
-                ", culoare='" + culoare + '\'' +
+                ", color='" + color + '\'' +
                 '}';
     }
 
@@ -40,6 +59,6 @@ class Circle {
 //        circle1=circle2=null;
 //        System.out.println(circle1 + " " + circle2);
 //        System.out.println(circle1==circle2);
-        System.out.println(circle1.culoare + " " + circle1.radius + " " + circle1.getArea());
+        System.out.println(circle1.color + " " + circle1.radius + " " + circle1.getArea());
     }
 }

@@ -8,10 +8,10 @@ public class PrintCalendar {
      * Main method
      */
     public static void main(String[] args) {
-        Date date= new Date();
+        Date date = new Date();
         Calendar calendar = Calendar.getInstance();
 //        calendar.setTime(date);
-        calendar.set(2000, 10, 1);
+        calendar.set(2023, 10, 18);
 
         printMonth(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH));
     }
@@ -78,8 +78,7 @@ public class PrintCalendar {
         for (i = 1; i <= numberOfDaysInMonth; i++) {
             System.out.printf("%4d", i);
 
-            if ((i + startDay) % 7 == 0)
-                System.out.println();
+            if ((i + startDay) % 7 == 0) System.out.println();
         }
 
         System.out.println();
@@ -105,10 +104,8 @@ public class PrintCalendar {
 
         // Get the total days from 1800 to 1/1/year
         for (int i = 1800; i < year; i++)
-            if (isLeapYear(i))
-                total = total + 366;
-            else
-                total = total + 365;
+            if (isLeapYear(i)) total = total + 366;
+            else total = total + 365;
 
         // Add days from Jan to the month prior to the calendar month
         for (int i = 1; i < month; i++)
@@ -121,15 +118,11 @@ public class PrintCalendar {
      * Get the number of days in a month
      */
     public static int getNumberOfDaysInMonth(int year, int month) {
-        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8
-                || month == 10 || month == 12)
-            return 31;
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) return 31;
 
-        if (month == 4 || month == 6 || month == 9 || month == 11)
-            return 30;
+        if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
 
-        if (month == 2)
-            return isLeapYear(year) ? 29 : 28;
+        if (month == 2) return isLeapYear(year) ? 29 : 28;
 
         return 0; // If month is incorrect
     }

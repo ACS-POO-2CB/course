@@ -1,5 +1,6 @@
 package basic_objects;
 
+//o clasa prea urata pentru a fi scrisa vreodata
 public class Hexagon {
 
     static int no1, no2;

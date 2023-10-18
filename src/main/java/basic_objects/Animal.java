@@ -11,23 +11,26 @@ import java.awt.Color;
  */
 public class Animal {
 
-    /** greutatea animalului in kg */
+    /**
+     * greutatea animalului in kg
+     */
     private long greutate;
     boolean isIerbivor;
 
-/**
- * culoarea animalului care poate fi absolut orice, inclusiv null
- */
+    /**
+     * culoarea animalului care poate fi absolut orice, inclusiv null
+     */
     private Color culoare;
     private String denumire;
     static int nrAnimale;
 
     /**
      * Constructorul default
-     * @param greutate greutatea animalului
+     *
+     * @param greutate   greutatea animalului
      * @param isIerbivor daca animalul este ierbivor sau nu
-     * @param culoare culoarea animalului
-     * @param denumire denumirea animalului
+     * @param culoare    culoarea animalului
+     * @param denumire   denumirea animalului
      */
     public Animal(long greutate, boolean isIerbivor, Color culoare, String denumire) {
         this.greutate = greutate;
@@ -70,8 +73,7 @@ public class Animal {
     @Override
     /**
      * @return o reprezentare a obiectului sub forma de string
-     */
-    public String toString() {
+     */ public String toString() {
         return this.denumire;
     }
 
@@ -89,10 +91,11 @@ public class Animal {
         System.out.println(nrAnimale);
         Animal rinocer = new Animal(200, true, "rinocer");
 
-        Animal veverita = new Animal(2, true, Color.BLUE, "super veverita")  {
+        Animal veverita = new Animal(2, true, Color.BLUE, "super veverita") {
             public void anaAreMere() {
                 System.out.println("Ana are mere");
             }
+
             public String toString() {
                 anaAreMere();
                 return "supe super super veverita";
