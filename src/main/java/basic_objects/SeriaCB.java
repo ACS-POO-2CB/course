@@ -2,8 +2,9 @@ package basic_objects;
 
 public class SeriaCB {
     private Integer nrStudenti;
+
     public SeriaCB() {
-        this(100);
+        this(124);
     }
 
     private SeriaCB(int nrStudenti) {
@@ -18,17 +19,18 @@ public class SeriaCB {
         this.nrStudenti = nrStudenti;
     }
 
-    public static void incrementeaza(SeriaCB x) {
-        x.setNrStudenti(x.getNrStudenti() + 10);
+    public static void incrementeaza(SeriaCB x, int y) {
+        x.nrStudenti += y;
     }
 
     public void incrementeaza() {
-        SeriaCB.incrementeaza(this);
+        SeriaCB.incrementeaza(this,10);
     }
 
     public static void main(String[] args) {
-        SeriaCB s1 = new SeriaCB(120);
+        SeriaCB s1 = new SeriaCB();
         s1.incrementeaza();
+        incrementeaza(s1, 20);
         System.out.println(s1.getNrStudenti());
     }
 }

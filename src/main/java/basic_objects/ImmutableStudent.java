@@ -1,17 +1,16 @@
 package basic_objects;
 
 public class ImmutableStudent {
-    private int id;
+    private long id;
     private BirthDate birthDate;
 
-    public ImmutableStudent(int ssn, int year, int month, int day) {
-        id = ssn;
+    public ImmutableStudent(long cnp, int year, int month, int day) {
+        id = cnp;
         birthDate = new BirthDate(year, month, day);
     }
 
-    public int getId() {
+    public long getId() {
         return id;
-
     }
 
     public BirthDate getBirthDate() {

@@ -1,24 +1,24 @@
 package basic_objects;
 
-public class Circle {
+public class MagicCircle {
     // The radius of this circle
     double radius;
     String color;
 
-    public Circle(double radius, String color) {
+    public MagicCircle(double radius, String color) {
         this.radius = radius;
         this.color = color;
     }
 
-    public Circle(float radius, String color) {
+    public MagicCircle(float radius, String color) {
         this((double) radius, color);
     }
 
-    public Circle() {
+    public MagicCircle() {
         this(1, "blue");
     }
 
-    public Circle(double radius) {
+    public MagicCircle(double radius) {
         this(1, "green");
     }
 
@@ -45,15 +45,15 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "Circle{" +
+        return "MagicCircle{" +
                 "radius=" + radius +
                 ", color='" + color + '\'' +
                 '}';
     }
 
     public static void main(String[] args) {
-        Circle circle1 = new Circle();
-        Circle circle2 = new Circle();
+        MagicCircle circle1 = new MagicCircle();
+        MagicCircle circle2 = new MagicCircle();
         System.out.println(circle1.toString() + " " + circle2);
 
 //        circle1=circle2=null;

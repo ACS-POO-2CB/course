@@ -10,8 +10,8 @@ public class PrintCalendar {
     public static void main(String[] args) {
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
-//        calendar.setTime(date);
-        calendar.set(2023, 10, 18);
+        calendar.setTime(date);
+//        calendar.set(2023, 10, 18);
 
         printMonth(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH));
     }

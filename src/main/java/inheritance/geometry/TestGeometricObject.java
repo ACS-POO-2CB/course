@@ -21,8 +21,8 @@ public class TestGeometricObject {
         // Display rectangle
         System.out.println(vector[1].getColor() + " "
                 + ((Rectangle)vector[1]).getWidth() + " " +
-                +((Rectangle)vector[1]).getHeight() + " " +
-                +((Circle)vector[1]).getArea());
-
+                +((Rectangle)vector[1]).getHeight() + " "
+//                +((Circle)vector[1]).getArea()
+        );
     }
 }

@@ -28,14 +28,14 @@ public class StaticTest {
     public static void main(String[] args) {
         Sub s= null;
         System.out.println("Fluffy");
-//        System.out.println(Super.no);
-//        System.out.println(Sub.no);
+        System.out.println(Super.no);
+        System.out.println(Sub.no);
 
         //try this block instead of the above two lines
 //        Sub.doSomething();
 
         //or this block instead of the above lines
-        new Sub();
-        new Sub();
+//        new Sub();
+//        new Sub();
     }
 }

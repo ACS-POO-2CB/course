@@ -44,7 +44,7 @@ public class Animal {
         this(greutate, isIerbivor, Color.PINK, denumire);
     }
 
-    //TODO Write more comments
+    //TODO add other colors
 
     public long getGreutate() {
         return greutate;
@@ -81,10 +81,10 @@ public class Animal {
         nrAnimale--;
     }
 
+    // solution - use Cleaner
     @Override
     protected void finalize() throws Throwable {
-        //solution - use Cleaner
-//        nrAnimale--;
+        nrAnimale--;
     }
 
     public static void main(String[] args) throws Throwable {
@@ -98,19 +98,20 @@ public class Animal {
 
             public String toString() {
                 anaAreMere();
-                return "supe super super veverita";
+                return "supe super veverita";
             }
         };
 
         Animal cangur = new Animal(100, true, "Kangur");
 
         System.out.println(rinocer + " " + veverita + " " + cangur);
-        System.out.println(nrAnimale);
+        System.out.println("Going wild with animals:" + nrAnimale);
 
         Animal animal;
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 100000; i++) {
             animal = new Animal(200, true, "rinocer");
-            Animal.sterge1Animal();
+//            System.gc();
+//            Animal.sterge1Animal();
         }
         System.out.println(nrAnimale);
     }

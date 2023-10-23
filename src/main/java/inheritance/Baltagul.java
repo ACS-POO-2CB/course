@@ -8,7 +8,7 @@ public class Baltagul extends Morometii {
     Baltagul(String x) {
         super(x);
         ilie = "Iliuta";
-        super.ilie = "Super ilie";
+        super.ilie = "Super Ilie";
         transhumanta = x;
     }
 
