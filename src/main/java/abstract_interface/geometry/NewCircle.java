@@ -46,6 +46,11 @@ public class NewCircle extends AbstractGeometricObject {
         return 2 * Math.PI * radius;
     }
 
+    @Override
+    public String toString() {
+        return "Un cerc extraordinar";
+    }
+
     /* Print the circle info */
     public void printCircle() {
         System.out.println("The circle is created " + getDateCreated() + " and the radius is " + radius);

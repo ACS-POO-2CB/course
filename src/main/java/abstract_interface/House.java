@@ -63,7 +63,7 @@ public class House implements Cloneable, Comparable<House> {
             return 0;
     }
 
-    protected Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException {
         // Perform a shallow copy
         House obj = (House) super.clone();
         // Deep copy on whenBuilt

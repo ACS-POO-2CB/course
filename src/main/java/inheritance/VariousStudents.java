@@ -9,10 +9,10 @@ public class VariousStudents {
 
     public static void main(String[] args) {
         Object o = new Object();
-        Person p = new Person();
-        Student s = new Student();
-        GraduateStudent g = new GraduateStudent();
-        Student special = new GraduateStudent() {
+        Person p = new Person(21, "Costel");
+        Student s = new Student(20, "Cornel", "Cornel");
+        GraduateStudent g = new GraduateStudent(25);
+        Student special = new GraduateStudent(40) {
             public String toString() {
                 return "Student putin obosit dupa multi ani";
             }
@@ -29,15 +29,20 @@ public class VariousStudents {
                 System.out.println(((Student) aux).test());
             }
 
-            if (aux instanceof Student oNou) {
-                System.out.println(oNou.test()+"!!!!");
+            if (aux instanceof Student studentNou) {
+                System.out.println(studentNou.test()+"!!!!");
             }
         }
     }
 }
 
 class GraduateStudent extends Student {
-    String nume = "Vasile++";
+    public GraduateStudent(int age) {
+        super(age, "Vasile++", "Vasile++");
+        this.nume = "Vasile++";
+    }
+
+    String nume ;
 
     public String toString() {
         return "Student dupa multi ani";
@@ -46,13 +51,18 @@ class GraduateStudent extends Student {
 }
 
 class Student extends Person {
+    String nume = "Vasile";
+
+    public Student(int age, String nume, String numePropriu) {
+        super(age, nume);
+        this.nume = numePropriu;
+    }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nume);
+        return Objects.hash(this.nume,super.nume);
     }
 
-    String nume = "Vasile";
 
     public String toString() {
         return "Student normal";
@@ -69,7 +79,13 @@ class Student extends Person {
 }
 
 class Person {
-    String nume = "Ion Generic";
+    final int age ;
+    String nume = "Alex";
+
+    public Person(int age, String nume) {
+        this.age = age;
+        this.nume = nume;
+    }
 
     public String toString() {
         return "O persoana normala";

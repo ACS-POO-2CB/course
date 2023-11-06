@@ -25,7 +25,7 @@ public class TestCalendar {
 
         Calendar calendar1 = new GregorianCalendar(2020, Calendar.JANUARY, 1);
         calendar1.add(Calendar.MONTH, -1);
-        calendar1.add(Calendar.YEAR, 3);
+        calendar1.add(Calendar.YEAR, 4);
         System.out.println(calendar1.getTime() + " is a " + dayNameOfWeek(calendar1.get(Calendar.DAY_OF_WEEK)) + " :)");
     }
 

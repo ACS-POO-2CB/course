@@ -67,4 +67,9 @@ public class NewRectangle extends AbstractGeometricObject {
     public double getPerimeter() {
         return 2 * (width + height);
     }
+
+    @Override
+    public String toString() {
+        return "Un dreptunghi simplu";
+    }
 }

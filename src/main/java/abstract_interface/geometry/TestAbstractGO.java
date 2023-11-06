@@ -9,14 +9,21 @@ public class TestAbstractGO {
         AbstractGeometricObject geoObject1 = new NewCircle(5);
         AbstractGeometricObject geoObject2 = new NewRectangle(5, 3);
         AbstractGeometricObject geoObject3 = new AbstractGeometricObject() {
+            private int width = 10;
+
             @Override
             public double getArea() {
-                return 0;
+                return width * width;
             }
 
             @Override
             protected double getPerimeter() {
-                return 0;
+                return 4 * width;
+            }
+
+            @Override
+            public String toString() {
+                return "Un patrat cu latura 10";
             }
         };
 

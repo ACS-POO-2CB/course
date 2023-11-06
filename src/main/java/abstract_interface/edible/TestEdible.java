@@ -39,11 +39,16 @@ class Orange extends Fruit {
 
 public class TestEdible {
     public static void main(String[] args) {
-        Edible[] objects = {new Tiger(), new Chicken(), new Apple(), new Orange(), new Edible() {
-            public String howToEat() {
-                return "Mi-e foame, as manca shawerma";
-            }
-        }};
+        Edible[] objects = {new Tiger(),
+                new Chicken(),
+                new Apple(),
+                new Orange(),
+                new Edible() {
+                    public String howToEat() {
+                        return "Mi-e foame, as manca shawarma";
+                    }
+                }
+        };
         System.out.println(Edible.getClassNameStatic());
         for (Edible o : objects) {
             System.out.println(o.howToEat());

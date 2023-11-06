@@ -29,5 +29,6 @@ public class Razboinic implements Erou, Spartan{
         System.out.println(r.getStrigatDeLupta());
         System.out.println(r.getStrigat());
         System.out.println(Erou.activeazaAuraSabiei());
+        System.out.println(Spartan.activeazaAuraSabiei());
     }
 }
