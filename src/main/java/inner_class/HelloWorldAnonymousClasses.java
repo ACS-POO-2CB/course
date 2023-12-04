@@ -3,13 +3,12 @@ package inner_class;
 public class HelloWorldAnonymousClasses {
 
     interface HelloWorld {
-        public void greet();
+        void greet();
 
-        public void greetSomeone(String someone);
+        void greetSomeone(String someone);
     }
 
     public void sayHello(String name) {
-
         for (HelloWorld hw : new HelloWorld[]{
                 new HelloWorld() {
                     public void greet() {

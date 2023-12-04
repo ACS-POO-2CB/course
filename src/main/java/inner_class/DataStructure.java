@@ -1,5 +1,6 @@
 package inner_class;
 
+import javax.xml.crypto.Data;
 import java.util.Iterator;
 
 public class DataStructure {
@@ -14,8 +15,7 @@ public class DataStructure {
         }
     }
 
-    public void printEven() {
-        Iterator<Integer> iterator = new EvenIterator();
+    public void printSpecial(Iterator<Integer> iterator) {
         while (iterator.hasNext()) {
             System.out.print(iterator.next() + " ");
         }
@@ -43,7 +43,7 @@ public class DataStructure {
         }
 
         public Integer next() {
-            Integer retValue = arrayOfInts[nextIndex];
+            Integer retValue = DataStructure.this.arrayOfInts[nextIndex];
             nextIndex += 2;
             return retValue;
         }
@@ -51,8 +51,8 @@ public class DataStructure {
 
     public static void main(String[] s) {
         DataStructure ds = new DataStructure();
-        ds.printEven();
-        ds.getIterator();
+        ds.printSpecial(ds.getIterator());
+        ds.printSpecial(ds.getIterator());
         System.out.println("Number of iterators: " + EvenIterator.noInterators);
     }
 }

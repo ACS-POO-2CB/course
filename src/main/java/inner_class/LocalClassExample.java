@@ -14,8 +14,6 @@ public class LocalClassExample {
                 String currentNumber = phoneNumber.replaceAll(REGULAR_EXPRESSION, "");
                 if (currentNumber.length() == numberLength)
                     formattedPhoneNumber = currentNumber;
-                else
-                    formattedPhoneNumber = null;
             }
 
             public String getNumber() {
@@ -35,7 +33,7 @@ public class LocalClassExample {
             }
         }
 
-        for (String s: phoneNumbers)
+        for (String s : phoneNumbers)
             System.out.println(new PhoneNumber(s));
     }
 

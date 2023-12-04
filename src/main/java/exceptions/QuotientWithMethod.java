@@ -23,11 +23,12 @@ public class QuotientWithMethod {
 		int number2 = input.nextInt();
 
 		try {
+//			int result = quotient(number1, number2);
 			int result = quotient2(number1, number2);
 			System.out.println(number1 + " / " + number2 + " is " + result);
-//		} catch (Exception ex) {
-//			System.err.println("Exception: an integer cannot be divided by zero: " + ex.getMessage());
-//			throw new RuntimeException();
+		} catch (Exception ex) {
+			System.err.println("Exception: an integer cannot be divided by zero: " + ex.getMessage());
+			throw new RuntimeException();
 		} finally {
 			System.out.println("Execution finishes ...");
 			input.close();

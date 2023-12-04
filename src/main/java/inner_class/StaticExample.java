@@ -1,7 +1,7 @@
 package inner_class;
 
 class A {
-    int x;
+    private int x;
     static int y;
 
     @Override
@@ -11,32 +11,38 @@ class A {
 
     class B extends A {
         int x;
-        static int y; // not allowed here
-        static int z;
-
+        static int y;
 
         public B(int x) {
+            super.x = x;
             this.x = 2 * x;
             A.this.x = 3 * x;
+            //Never ever, do not de-comment the following line
+//            B b = this.new B(x++);
         }
 
         static void print() {
-            System.out.println(y+z);
+            System.out.println(y);
         }
+
         @Override
         public String toString() {
-            return "B [x=" + this.x + "]";
+            return "B [x=" + super.x + " " + this.x + " " + A.this.x + "]";
         }
     }
 
     static class C {
         int x;
-        static int y; // allowed here
+        static int y;
 
         public C(int x) {
             this.x = 2 * x;
             y++;
             A.y = 3 * y;
+        }
+
+        static void print() {
+            System.out.println(A.y + "/" + C.y);
         }
 
         @Override
@@ -45,21 +51,28 @@ class A {
         }
     }
 
+    public static void doSomething() {
+        B b = new A().new B(10);
+        System.out.println(b);
+    }
 }
 
 public class StaticExample {
     public static void main(String[] str) {
         A a = new A();
+        A.doSomething();
+        A.C.print();
+
         // need of enclosing instance
-//        A.B obj1 = a.new B(1);
-//        System.out.println(obj1);
+        A.B b = a.new B(1);
+        System.out.println(b);
         System.out.println(A.B.y);
 
         // no need of reference of object of outer class
-        A.C obj2 = new A.C(1);
-        System.out.println(obj2);
-        A.C obj3 = new A.C(2);
-        System.out.println(obj3);
+        A.C c1 = new A.C(1);
+        System.out.println(c1);
+        A.C c2 = new A.C(2);
+        System.out.println(c2);
 
         System.out.println(A.y + " " + A.C.y);
     }
