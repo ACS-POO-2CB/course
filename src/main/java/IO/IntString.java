@@ -16,7 +16,8 @@ public class IntString {
     }
 
     public static void modificaInt(IntString x) {
-        x.setX(x.getX()+1);
+//        x.setX(x.getX()+1);
+        x.x++;
     }
 
     @Override
@@ -31,11 +32,15 @@ public class IntString {
         String b="Java";
         String c=new String("Java");
         String d="Ja"+"va";
+
         String e=new String("Java");
         System.out.println(a==b);
         System.out.println(a==c);
         System.out.println(a==d);
         System.out.println(c==e);
+
+        c.concat(d);
+        System.out.println(c);
 
         System.out.println("-----------------");
         Integer i1=127;

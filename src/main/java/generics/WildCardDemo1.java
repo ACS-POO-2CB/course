@@ -4,7 +4,7 @@ public class WildCardDemo1 <E> {
     E var;
 
     public static void main(String[] args) {
-        GenericStack<Long> intStack = new GenericStack<Long>();
+        GenericStack<Long> intStack = new GenericStack<>();
         intStack.push(1L); // 1 is autoboxed into new Integer(1)
         intStack.push(2L);
         intStack.push(-2L);

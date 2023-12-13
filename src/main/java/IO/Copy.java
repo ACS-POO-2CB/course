@@ -41,10 +41,6 @@ public class Copy {
                 numberOfBytesCopied++;
             }
 
-            // Close streams
-            input.close();
-            output.close();
-
             // Display the file size
             System.out.println(numberOfBytesCopied + " bytes copied");
         } catch (IOException e) {

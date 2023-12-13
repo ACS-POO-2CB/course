@@ -1,4 +1,4 @@
-package generics;
+package generics.matrix;
 
 public abstract class GenericMatrix<E extends Number> {
     /**

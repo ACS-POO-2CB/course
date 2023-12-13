@@ -9,12 +9,14 @@ import java.io.Serializable;
 class Cat {
     private String description;
 
-    Cat() {
-        this.description = "fluffy cat";
+    public Cat() {
+        this.description = "sunt doar puffy";
+        System.out.println("default cat");
     }
 
     public Cat(String description) {
         this.description = description;
+        System.out.println("cat");
     }
 
     public String getDescription() {
@@ -25,6 +27,7 @@ class Cat {
 class SerializableCat extends Cat implements Serializable {
     public SerializableCat() {
         super("puffy");
+        System.out.println("serializable");
     }
 }
 

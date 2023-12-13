@@ -11,7 +11,7 @@ public class TestObjectStream {
         try (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src/main/resources/object.dat"));
              ObjectInputStream input = new ObjectInputStream(new FileInputStream("src/main/resources/object.dat"))) {
             // Write a string, double value, and object to the file
-            output.writeUTF("John");
+            output.writeUTF("John Doe");
             output.writeDouble(85.5);
             output.writeObject(new java.util.Date());
 

@@ -1,4 +1,4 @@
-package generics;
+package generics.matrix;
 
 public class IntegerMatrix extends GenericMatrix<Integer> {
     /**

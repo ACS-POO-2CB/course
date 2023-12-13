@@ -1,4 +1,4 @@
-package generics;
+package generics.matrix;
 
 public class Rational extends Number implements Comparable<Rational> {
     private long numerator = 0;

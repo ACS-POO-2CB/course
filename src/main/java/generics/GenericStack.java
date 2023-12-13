@@ -1,6 +1,5 @@
 package generics;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,9 +41,7 @@ public class GenericStack<E> {
         for (String s : strings)
             stack1.push(s);
         stack1.push(numar.toString());
-        while (!stack1.isEmpty())
-            System.out.print(stack1.pop() + " ");
-        System.out.println();
+        print(stack1.list.toArray(new String[stack1.getSize()]));
 
         GenericStack<Integer> stack2 = new GenericStack();
 

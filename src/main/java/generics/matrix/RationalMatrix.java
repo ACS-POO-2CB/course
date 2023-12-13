@@ -1,4 +1,4 @@
-package generics;
+package generics.matrix;
 
 public class RationalMatrix extends GenericMatrix<Rational> {
     /**

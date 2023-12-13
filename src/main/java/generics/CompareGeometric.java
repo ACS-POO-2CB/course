@@ -14,7 +14,7 @@ public class CompareGeometric {
     }
 
     public static void main(String[] args) {
-        List<AbstractGeometricObject> aList = new ArrayList<AbstractGeometricObject>();
+        List<AbstractGeometricObject> aList = new ArrayList<>();
 
         aList.add(new NewRectangle(1, 1));
 

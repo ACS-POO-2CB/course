@@ -2,7 +2,7 @@ package IO;
 
 import java.io.*;
 
-class Collar implements Serializable{
+class Collar {
     private int collarSize;
 
     public Collar(int size) {
