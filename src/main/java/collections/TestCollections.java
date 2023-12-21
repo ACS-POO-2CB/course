@@ -32,10 +32,11 @@ public class TestCollections {
 		System.out.println("The minimum element in the list is " + Collections.min(arrayList));
 		System.out.println("The maximum element in the list is " + Collections.max(arrayList));
 
-		System.out.println("The search result for gray is " + Collections.binarySearch(arrayList, "gray"));
-
 		Collections.sort(arrayList);
 		System.out.println("The sorted list is\n" + arrayList);
+		
+		System.out.println("The search result for gray is " + Collections.binarySearch(arrayList, "gray"));
+
 
 		List<String> syncList = Collections.synchronizedList(arrayList);
 
