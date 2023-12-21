@@ -6,8 +6,8 @@ public class CountWordOccurrences {
     public static void main(String[] args) {
         // Set text in a string
         String text = """
-                Good morning. Have a great day!
-                Have a good visit. Have fun!""";
+                Good day. Have a great day with POO! Poo is simply great.
+                Enjoy your holidays. Have fun!""";
 
         // Create a TreeMap to hold words as key and count as value
         Map<String, Integer> map = new TreeMap<>();
@@ -26,9 +26,9 @@ public class CountWordOccurrences {
 
         // Get key and value from each entry
         for (Map.Entry<String, Integer> entry : map.entrySet())
-            System.out.println(entry.getValue() + "\t" + entry.getKey());
+            System.out.println(entry.getKey() + "\t" + entry.getValue());
 
-        // Please never do this
+        // Please NEVER EVER EVER do this
         for (String s : map.keySet())
             System.out.println(s + "\t" + map.get(s));
     }

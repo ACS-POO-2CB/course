@@ -1,5 +1,6 @@
 package collections;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -16,13 +17,13 @@ public class TestHash {
     @Override
     public int hashCode() {
         return a % 10;
-//       return Objects.hash(a, s);
+//       return Objects.hash(a, a, a);
     }
 
     @Override
     public boolean equals(Object obj) {
         TestHash other = (TestHash) obj;
-        if (a % 10 != other.a % 10)
+        if (this.hashCode() != other.hashCode())
             return false;
         return true;
     }
@@ -46,5 +47,4 @@ public class TestHash {
         set.add(new TestHash(20));
         System.out.println(set);
     }
-
 }
