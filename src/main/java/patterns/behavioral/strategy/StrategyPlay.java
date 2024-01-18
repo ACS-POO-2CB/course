@@ -1,31 +1,27 @@
 package patterns.behavioral.strategy;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 // Battle Simulation
 public class StrategyPlay {
     public static void main(String[] args) {
-        GameCharacter knight = new GameCharacter("Knight", new SwordAttack());
-        GameCharacter wizard = new GameCharacter("Wizard", new MagicAttack());
-        GameCharacter archer = new GameCharacter("Archer", new BowAndArrowAttack());
+        List<GameCharacter> characterList = Arrays.asList(new GameCharacter("Knight", new SwordAttack()),
+                new GameCharacter("Wizard", new MagicAttack()),
+                new GameCharacter("Archer", new BowAndArrowAttack()));
 
-        // Simulate attack and record DPS
-        int knightDPS = knight.performAttack();
-        int wizardDPS = wizard.performAttack();
-        int archerDPS = archer.performAttack();
-
-        // Determine the winner
-        GameCharacter winner = knight;
-        int highestDPS = knightDPS;
-
-        if (wizardDPS > highestDPS) {
-            winner = wizard;
-            highestDPS = wizardDPS;
-        }
-        if (archerDPS > highestDPS) {
-            winner = archer;
-            highestDPS = archerDPS;
+        double maxDPS = 0;
+        GameCharacter winner = null;
+        for (GameCharacter character : characterList) {
+            int damage = character.performAttack();
+            if (damage > maxDPS) {
+                maxDPS = damage;
+                winner = character;
+            }
         }
 
-        System.out.println("The winner is " + winner.getName() + " with a DPS of " + highestDPS + "!");
+        System.out.println("The winner is " + winner.getName() + " with a DPS of " + maxDPS + "!");
     }
 }
 

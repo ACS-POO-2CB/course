@@ -14,6 +14,6 @@ public class FactoryPlay {
 
 		List<Object> kitchen = distributor.getKitchenFurniture();
 
-		System.out.println("Delivered tables: " + kitchen);
+		System.out.println("Delivered products: " + kitchen);
 	}
 }
