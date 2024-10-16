@@ -19,12 +19,11 @@ public class MagicCircle {
     }
 
     public MagicCircle(double radius) {
-        this(1, "green");
+        this(radius, "green");
     }
 
-
     double getArea() {
-        return Math.PI*Math.pow(radius, 2);
+        return Math.PI * Math.pow(radius, 2);
     }
 
     public double getRadius() {
@@ -51,14 +50,25 @@ public class MagicCircle {
                 '}';
     }
 
+    static void facemCeva(MagicCircle magicCircle) {
+        System.out.println("Ceva awesome!");
+    }
+
+    void facemCeva() {
+        facemCeva(this);
+    }
+
     public static void main(String[] args) {
         MagicCircle circle1 = new MagicCircle();
-        MagicCircle circle2 = new MagicCircle();
+        MagicCircle circle3, circle4, circle2;
+        circle4 = circle3 = circle2 = new MagicCircle();
         System.out.println(circle1.toString() + " " + circle2);
+
 
 //        circle1=circle2=null;
 //        System.out.println(circle1 + " " + circle2);
 //        System.out.println(circle1==circle2);
+        circle1.facemCeva();
         System.out.println(circle1.color + " " + circle1.radius + " " + circle1.getArea());
     }
 }

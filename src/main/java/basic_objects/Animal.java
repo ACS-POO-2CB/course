@@ -89,30 +89,21 @@ public class Animal {
 
     public static void main(String[] args) throws Throwable {
         System.out.println(nrAnimale);
-        Animal rinocer = new Animal(200, true, "rinocer");
-
-        Animal veverita = new Animal(2, true, Color.BLUE, "super veverita") {
-            public void anaAreMere() {
-                System.out.println("Ana are mere");
-            }
-
-            public String toString() {
-                anaAreMere();
-                return "supe super veverita";
-            }
-        };
+        Animal rinocer = new Animal(200, true, "Rinocer");
 
         Animal cangur = new Animal(100, true, "Kangur");
 
-        System.out.println(rinocer + " " + veverita + " " + cangur);
+        System.out.println(rinocer + " " + cangur);
         System.out.println("Going wild with animals:" + nrAnimale);
 
         Animal animal;
         for (int i = 0; i < 100000; i++) {
             animal = new Animal(200, true, "rinocer");
-//            System.gc();
 //            Animal.sterge1Animal();
         }
+//        System.gc();
+//        Thread.sleep(1000);
+
         System.out.println(nrAnimale);
     }
 }

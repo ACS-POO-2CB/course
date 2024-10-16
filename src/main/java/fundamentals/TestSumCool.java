@@ -11,7 +11,7 @@ public class TestSumCool {
 
         // Add 0.01, 0.02, ..., 0.99, 1 to sum
         for (var i = 0.01d; i <= 1.0d; i += 0.01d)
-            sum = sum.add(new BigDecimal(i), MathContext.DECIMAL64);
+            sum = sum.add(BigDecimal.valueOf(i), MathContext.DECIMAL64);
 
         // Display result
         System.out.println("The sum is " + sum);

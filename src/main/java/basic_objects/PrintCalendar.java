@@ -11,9 +11,9 @@ public class PrintCalendar {
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-//        calendar.set(2023, 10, 18);
+//        calendar.set(2024, 10, 16);
 
-        printMonth(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH));
+        printMonth(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1);
     }
 
     /**

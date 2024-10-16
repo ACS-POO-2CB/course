@@ -25,6 +25,5 @@ public class TestPass {
         System.out.println("R = " + myCircle.getRadius());
         System.out.println("n = " + n);
     }
-
 }
 

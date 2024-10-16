@@ -4,7 +4,7 @@ public class SeriaCB {
     private Integer nrStudenti;
 
     public SeriaCB() {
-        this(124);
+        this(128);
     }
 
     private SeriaCB(int nrStudenti) {
