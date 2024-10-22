@@ -17,12 +17,14 @@ public class VariousStudents {
                 return "Student putin obosit dupa multi ani";
             }
         };
+
         print(o);
         print(p + " " + p.nume);
         print((Person) s + " / " + s.nume + " / " + ((Person) s).nume);
         print((Person) s + " / " + s.getNume() + " / " + ((Person) s).getNume());
         print(special + " / " + special.nume + " / " + ((Person) special).nume + " / " + special.getNume());
 
+        System.out.println("------------");
         Object[] vector = {o, p, s, g, special};
         for (Object aux : vector) {
             if (aux instanceof Student) {

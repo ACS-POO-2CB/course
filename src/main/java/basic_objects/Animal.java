@@ -1,6 +1,7 @@
 package basic_objects;
 
 import java.awt.Color;
+import java.lang.ref.Cleaner;
 
 /**
  * O clasa foarte utila care descrie un animal
@@ -14,96 +15,77 @@ public class Animal {
     /**
      * greutatea animalului in kg
      */
-    private long greutate;
-    boolean isIerbivor;
+    private long weight;
+    boolean isHerbivor;
+    static int noAnimals;
 
-    /**
-     * culoarea animalului care poate fi absolut orice, inclusiv null
-     */
-    private Color culoare;
-    private String denumire;
-    static int nrAnimale;
+    // Cleaner instance
+    private static final Cleaner cleaner = Cleaner.create();
+    private Cleaner.Cleanable cleanable;
 
     /**
      * Constructorul default
      *
-     * @param greutate   greutatea animalului
-     * @param isIerbivor daca animalul este ierbivor sau nu
-     * @param culoare    culoarea animalului
-     * @param denumire   denumirea animalului
+     * @param weight     greutatea animalului
+     * @param isHerbivor daca animalul este ierbivor sau nu
      */
-    public Animal(long greutate, boolean isIerbivor, Color culoare, String denumire) {
-        this.greutate = greutate;
-        this.isIerbivor = isIerbivor;
-        this.culoare = culoare;
-        this.denumire = denumire;
-        nrAnimale++;
+    public Animal(long weight, boolean isHerbivor) {
+        this.weight = weight;
+        this.isHerbivor = isHerbivor;
+        noAnimals++;
+        // Register the cleaning action
+        cleanable = cleaner.register(this, Animal::deleteAnimal); //method reference operator
     }
 
-    public Animal(long greutate, boolean isIerbivor, String denumire) {
-        this(greutate, isIerbivor, Color.PINK, denumire);
+    public Animal(long greutate) {
+        this(greutate, true);
     }
 
     //TODO add other colors
 
-    public long getGreutate() {
-        return greutate;
+    public long getWeight() {
+        return weight;
     }
 
-    public void setGreutate(long greutate) {
-        this.greutate = greutate;
+    public void setWeight(long weight) {
+        this.weight = weight;
     }
 
-    public boolean isIerbivor() {
-        return isIerbivor;
+    public boolean isHerbivor() {
+        return isHerbivor;
     }
 
-    public void setIerbivor(boolean ierbivor) {
-        isIerbivor = ierbivor;
+    public void setHerbivor(boolean herbivor) {
+        isHerbivor = herbivor;
     }
 
-    public Color getCuloare() {
-        return culoare;
+    public static void deleteAnimal() {
+        noAnimals--;
     }
 
-    public void setCuloare(Color culoare) {
-        this.culoare = culoare;
-    }
-
-    @Override
-    /**
-     * @return o reprezentare a obiectului sub forma de string
-     */ public String toString() {
-        return this.denumire;
-    }
-
-    public static void sterge1Animal() {
-        nrAnimale--;
-    }
-
-    // solution - use Cleaner
-    @Override
-    protected void finalize() throws Throwable {
-        nrAnimale--;
-    }
+    //please do not use this method
+//    @Override
+//    protected void finalize() throws Throwable {
+//        noAnimals--;
+//    }
 
     public static void main(String[] args) throws Throwable {
-        System.out.println(nrAnimale);
-        Animal rinocer = new Animal(200, true, "Rinocer");
+        System.out.println(noAnimals);
+        Animal rinocer = new Animal(200, true);
 
-        Animal cangur = new Animal(100, true, "Kangur");
+        Animal cangur = new Animal(100, true);
 
         System.out.println(rinocer + " " + cangur);
-        System.out.println("Going wild with animals:" + nrAnimale);
+        System.out.println("Going wild with animals:" + noAnimals);
 
         Animal animal;
-        for (int i = 0; i < 100000; i++) {
-            animal = new Animal(200, true, "rinocer");
+        for (int i = 0; i < 1000000; i++) {
+            animal = new Animal(200, true);
 //            Animal.sterge1Animal();
         }
-//        System.gc();
-//        Thread.sleep(1000);
 
-        System.out.println(nrAnimale);
+//        Thread.sleep(10000);
+        System.out.println(noAnimals);
     }
 }
+

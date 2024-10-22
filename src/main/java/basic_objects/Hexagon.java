@@ -1,7 +1,5 @@
 package basic_objects;
 
-import java.util.Arrays;
-
 //O clasa prea urata pentru a fi scrisa vreodata
 public class Hexagon {
 
@@ -17,64 +15,64 @@ public class Hexagon {
         no2 = 0;
     }
 
-    int latura;
-    int diagonala;
+    int edge;
+    int diagonal;
 
     /**
      * Constructorul implicit
      *
-     * @param latura
-     * @param diagonala
+     * @param edge
+     * @param diagonal
      */
-    public Hexagon(int latura, int diagonala) {
-        this.latura = latura;
-        this.diagonala = diagonala;
+    public Hexagon(int edge, int diagonal) {
+        this.edge = edge;
+        this.diagonal = diagonal;
         no1++;
     }
 
-    public int getLatura() {
-        return latura;
+    public int getEdge() {
+        return edge;
     }
 
-    public static void schimbaHexagon(Hexagon[] h) {
+    public static void changeHexagon(Hexagon[] h) {
         Hexagon h2 = new Hexagon(2, 2);
         h[0] = h2;
-        h2.latura = 100;
+        h[0].edge = 100;
     }
 
-    public static void schimbaString(String text) {
+    public static void changeString(String text) {
         text += "a";
     }
 
-    public static void schimbaInteger(Integer x) {
+    
+    public static void changeInteger(Integer x) {
         x++;
     }
     @Override
     public String toString() {
         return "Hexagon{" +
-                "latura=" + latura +
-                ", diagonala=" + diagonala +
+                "edge=" + edge +
+                ", diagonal=" + diagonal +
                 '}';
     }
 
     public static void main(String[] args) {
-
         Hexagon h1 = new Hexagon(10, 10);
         Hexagon[] vect = {h1,h1};
         //Arrays.asList(h1,h1).toArray(new Hexagon[]{})
 
         System.out.println(vect[0]);
 
-        Hexagon.schimbaHexagon(vect);
+        Hexagon.changeHexagon(vect);
         System.out.println(vect[0]);
         System.out.println(no1 + " " + no2);
 
         String text = "hexagon";
-        schimbaString(text);
+        changeString(text);
         System.out.println(text);
 
         Integer x=10;
-        schimbaInteger(x);
+        changeInteger(x);
         System.out.println(x);
     }
 }

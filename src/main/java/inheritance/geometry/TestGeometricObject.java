@@ -5,8 +5,6 @@ public class TestGeometricObject {
      * Main method
      */
 
-    String s = "abc";
-
     public static void main(String[] args) {
         // Declare and initialize two geometric objects
         Circle geoObject1 = new Circle(5);
@@ -20,9 +18,14 @@ public class TestGeometricObject {
 
         // Display rectangle
         System.out.println(vector[1].getColor() + " "
-                + ((Rectangle)vector[1]).getWidth() + " " +
-                +((Rectangle)vector[1]).getHeight() + " "
+                        + ((Rectangle) vector[1]).getWidth() + " " +
+                        +((Rectangle) vector[1]).getHeight() + " "
 //                +((Circle)vector[1]).getArea()
         );
+
+        for (GeometricObject go : vector) {
+            System.out.println(go.getColor() + " " + go.getDateCreated());
+        }
+
     }
 }

@@ -27,6 +27,11 @@ public class Baltagul extends Morometii {
         Baltagul b = new Baltagul("Ilie generic");
         System.out.println(b.ilie);
         System.out.println(b.getIlie());
+        System.out.println("-----------------");
+
+        verifica(b);
+        System.out.println("-----------------");
+
         b.setIlie("mega ilie");
         System.out.println(b.getIlie());
         verifica(b);

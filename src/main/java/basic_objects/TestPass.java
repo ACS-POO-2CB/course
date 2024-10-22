@@ -1,13 +1,12 @@
 package basic_objects;
 
 public class TestPass {
-
-
     /**
      * Print a table of areas for radius
      */
     public static void printAreas(MagicCircle c, int n) {
         System.out.println("Radius\tArea");
+        c = new MagicCircle(10);
         while (n >= 1) {
             System.out.println(c.getRadius() + "\t" + c.getArea());
             c.setRadius(c.getRadius() + 1);
