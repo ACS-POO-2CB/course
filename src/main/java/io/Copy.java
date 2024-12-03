@@ -1,4 +1,4 @@
-package IO;
+package io;
 
 import java.io.*;
 
@@ -12,7 +12,7 @@ public class Copy {
     public static void main(String[] args)  {
         // Check command-line parameter usage
         if (args.length != 2) {
-            System.out.println("Usage: java Copy sourceFile target file");
+            System.out.println("Usage: java Copy sourceFile targetFile");
             System.exit(0);
         }
 

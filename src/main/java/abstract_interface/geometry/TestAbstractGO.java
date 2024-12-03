@@ -7,6 +7,7 @@ public class TestAbstractGO {
     public static void main(String[] args) {
         // Declare and initialize two geometric objects
         AbstractGeometricObject geoObject1 = new NewCircle(5);
+        System.out.println(geoObject1);
         AbstractGeometricObject geoObject2 = new NewRectangle(5, 3);
         AbstractGeometricObject geoObject3 = new AbstractGeometricObject() {
             private int width = 10;
@@ -17,13 +18,13 @@ public class TestAbstractGO {
             }
 
             @Override
-            protected double getPerimeter() {
+            public double getPerimeter() {
                 return 4 * width;
             }
 
             @Override
             public String toString() {
-                return "Un patrat cu latura 10";
+                return "Un patrat cu latura " + width;
             }
         };
 

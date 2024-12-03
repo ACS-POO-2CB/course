@@ -3,7 +3,7 @@ package exceptions;
 import java.util.Scanner;
 
 public class QuotientWithException {
-    public static void main (String[] args) {
+    public static void main (String[] args) throws Exception {
         Scanner input = null;
         try {
             input = new Scanner(System.in);
@@ -19,7 +19,8 @@ public class QuotientWithException {
             System.out.println(number1 + " / " + number2 + " is " + (number1 / number2));
         } catch (ArithmeticException ex) {
             System.out.println("Exception: an integer cannot be divided by zero: " + ex.getMessage());
-        } finally {
+        }
+        finally {
             System.out.println("Execution finishes ...");
             input.close();
         }

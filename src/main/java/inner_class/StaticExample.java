@@ -2,7 +2,7 @@ package inner_class;
 
 class A {
     private int x;
-    static int y;
+    private static int y;
 
     @Override
     public String toString() {
@@ -63,17 +63,19 @@ public class StaticExample {
         A.doSomething();
         A.C.print();
 
+        System.out.println("-----------------");
         // need of enclosing instance
         A.B b = a.new B(1);
         System.out.println(b);
         System.out.println(A.B.y);
 
+        System.out.println("-----------------");
         // no need of reference of object of outer class
         A.C c1 = new A.C(1);
         System.out.println(c1);
         A.C c2 = new A.C(2);
         System.out.println(c2);
 
-        System.out.println(A.y + " " + A.C.y);
+        c2.print();
     }
 }

@@ -2,7 +2,7 @@ package exceptions;
 
 //Enum class with 3 doom options
 enum Options {
-    DivisionByZero, NullPointer, IndexOutOfAnyBounds;
+    DivisionByZero, IndexOutOfAnyBounds, NullPointer, ;
 
     //override toString() method
     @Override

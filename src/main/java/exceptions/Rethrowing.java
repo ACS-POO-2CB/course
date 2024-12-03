@@ -10,7 +10,7 @@ class Exception21 extends Exception2 {
 
 public class Rethrowing {
     public static void main(String[] args) throws Exception1, Exception2 {
-        int x = 1, y = 0;
+        int x = -1, y = 0;
         try {
             if (x > y)
                 throw new Exception1();

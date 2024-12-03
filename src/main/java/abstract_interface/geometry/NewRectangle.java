@@ -70,6 +70,6 @@ public class NewRectangle extends AbstractGeometricObject {
 
     @Override
     public String toString() {
-        return "Un dreptunghi simplu";
+        return "A basic rectangle";
     }
 }

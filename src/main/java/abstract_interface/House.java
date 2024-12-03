@@ -84,5 +84,9 @@ public class House implements Cloneable, Comparable<House> {
         System.out.println(house1.getWhenBuilt() + " vs " + house2.getWhenBuilt());
 
         System.out.println(house1.getWhenBuilt() == house2.getWhenBuilt());
+
+        Integer[] intArray = {1, 2, 3};
+        System.out.println(""+intArray[0] + intArray[1] + intArray[2]);
+
     }
 }

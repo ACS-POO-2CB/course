@@ -1,4 +1,4 @@
-package IO;
+package io;
 
 public class TestFileClass {
     public static void main(String[] args) {

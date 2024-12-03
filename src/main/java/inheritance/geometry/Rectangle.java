@@ -40,7 +40,7 @@ public class Rectangle extends GeometricObject {
     /**
      * Return area
      */
-    public double getArea() {
+    public Double getArea() {
         return width * height;
     }
 

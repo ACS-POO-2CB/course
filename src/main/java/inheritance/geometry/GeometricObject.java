@@ -1,6 +1,6 @@
 package inheritance.geometry;
 
-public class GeometricObject {
+public class GeometricObject extends Object {
     protected String color = "white";
     private boolean filled;
     private final java.util.Date dateCreated;
@@ -62,5 +62,16 @@ public class GeometricObject {
     public String toString() {
         return "Created on " + dateCreated + "\ncolor: " + color
                 + " and filled: " + filled;
+    }
+
+    Number getArea() {
+        return 0;
+    }
+
+    /**
+     * Return perimeter
+     */
+    public double getPerimeter() {
+        return 0;
     }
 }

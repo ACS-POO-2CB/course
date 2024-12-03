@@ -26,9 +26,7 @@ public class LocalClassExample {
                     return """
                             PhoneNumber {
                                 formattedPhoneNumber = '""" + formattedPhoneNumber
-                            + """
-                            '
-                            }""";
+                            + "'";
                 return "Illegal phone number format";
             }
         }

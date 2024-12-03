@@ -17,7 +17,7 @@ public abstract class AbstractGeometricObject extends GeometricObject {
 	public abstract double getArea();
 
 	/** Abstract method getPerimeter */
-	protected abstract double getPerimeter();
+	public abstract double getPerimeter();
 
 	@Override
 	public abstract String toString() ;

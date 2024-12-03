@@ -11,8 +11,8 @@ public class X {
         this.x = x;
     }
 
-    void X(int x) {
-        this.x = x;
+    void X(int X) {
+        this.x = X;
     }
 
     public class Y {
@@ -24,19 +24,20 @@ public class X {
 
         void x(int x) {
             int z;
-            z=100;
+            z = 100;
             abstract class x {
                 int x;
 
                 public x(int x) {
-                    this.x = x+z;
+                    this.x = x + z;
                 }
 
                 public x() {
                     this.x = X.Y.this.x;
                 }
             }
-            x X = new x(x){};
+            x X = new x(x) {
+            };
             System.out.println(x + " " + X.x + " " + this.x + " " + X.this.x);
         }
     }
@@ -51,6 +52,7 @@ public class X {
         }
 
         void x(int x) {
+            super.x(x);
             System.out.println(x + "/" + this.x + "/" + Z.super.x + "/" + X.this.x);
         }
     }

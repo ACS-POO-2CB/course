@@ -1,6 +1,5 @@
 package inner_class;
 
-import javax.xml.crypto.Data;
 import java.util.Iterator;
 
 public class DataStructure {
@@ -26,6 +25,10 @@ public class DataStructure {
         return new EvenIterator();
     }
 
+    public static void process() {
+        EvenIterator ev = new DataStructure().new EvenIterator();
+    }
+
     interface DataStructureIterator extends Iterator<Integer> {
 
     }
@@ -39,7 +42,7 @@ public class DataStructure {
         }
 
         public boolean hasNext() {
-            return (nextIndex <= SIZE - 1);
+            return (nextIndex < SIZE);
         }
 
         public Integer next() {
@@ -49,10 +52,32 @@ public class DataStructure {
         }
     }
 
+    public class Iterator3 extends EvenIterator {
+        private int nextIndex = 0;
+
+        public boolean hasNext() {
+            return (nextIndex < SIZE-2);
+        }
+
+        public Integer next() {
+            Integer retValue = arrayOfInts[nextIndex];
+            nextIndex += 3;
+            return retValue;
+        }
+    }
+
     public static void main(String[] s) {
-        DataStructure ds = new DataStructure();
-        ds.printSpecial(ds.getIterator());
-        ds.printSpecial(ds.getIterator());
-        System.out.println("Number of iterators: " + EvenIterator.noInterators);
+        DataStructure ds1 = new DataStructure();
+        DataStructure.EvenIterator ei1 = ds1.new EvenIterator();
+        ds1.printSpecial(ei1);
+        ds1.printSpecial(ds1.getIterator());
+        ds1.printSpecial(ds1.new EvenIterator());
+        ds1.printSpecial(ds1.new Iterator3());
+
+        DataStructure ds2 = new DataStructure();
+        ds2.printSpecial(ds2.getIterator());
+        ds2.printSpecial(ds2.new EvenIterator());
+
+        System.out.println("Number of iterators: " + DataStructure.EvenIterator.noInterators);
     }
 }

@@ -12,39 +12,38 @@ public class VariousStudents {
         Person p = new Person(21, "Costel");
         Student s = new Student(20, "Cornel", "Cornel");
         GraduateStudent g = new GraduateStudent(25);
+
         Student special = new GraduateStudent(40) {
+            private String name = "Vasile+++";
+
             public String toString() {
-                return "Student putin obosit dupa multi ani";
+                return name + ": Student putin obosit dupa multi ani";
             }
         };
 
         print(o);
-        print(p + " " + p.nume);
-        print((Person) s + " / " + s.nume + " / " + ((Person) s).nume);
-        print((Person) s + " / " + s.getNume() + " / " + ((Person) s).getNume());
-        print(special + " / " + special.nume + " / " + ((Person) special).nume + " / " + special.getNume());
+        print(p + " " + p.name);
+        print((Person) s + " / " + s.name + " / " + ((Person) s).name);
+        print((Person) s + " / " + s.getName() + " / " + ((Person) s).getName());
+        print(special + " / " + special.name + " / " + ((Person) special).name + " / " + special.getName());
 
         System.out.println("------------");
         Object[] vector = {o, p, s, g, special};
         for (Object aux : vector) {
-            if (aux instanceof Student) {
-                System.out.println(((Student) aux).test());
-            }
-
             if (aux instanceof Student studentNou) {
-                System.out.println(studentNou.test()+"!!!!");
+                System.out.println(studentNou.name + ": " + studentNou.test() + "!!!!");
             }
         }
     }
 }
 
 class GraduateStudent extends Student {
+    String name;
+
     public GraduateStudent(int age) {
         super(age, "Vasile++", "Vasile++");
-        this.nume = "Vasile++";
+        this.name = "Vasile++";
     }
-
-    String nume ;
 
     public String toString() {
         return "Student dupa multi ani";
@@ -53,16 +52,16 @@ class GraduateStudent extends Student {
 }
 
 class Student extends Person {
-    String nume = "Vasile";
+    String name = "Vasile";
 
-    public Student(int age, String nume, String numePropriu) {
-        super(age, nume);
-        this.nume = numePropriu;
+    public Student(int age, String name, String codeName) {
+        super(age, name);
+        this.name = codeName;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.nume,super.nume);
+        return Objects.hash(this.name, super.name, 42);
     }
 
 
@@ -71,8 +70,12 @@ class Student extends Person {
     }
 
     @Override
-    public String getNume() {
-        return nume;
+    public String getName() {
+        return name;
+    }
+
+    public String getOriginalName() {
+        return super.name;
     }
 
     public String test() {
@@ -81,19 +84,19 @@ class Student extends Person {
 }
 
 class Person {
-    final int age ;
-    String nume = "Alex";
+    final int age;
+    String name = "Alex";
 
-    public Person(int age, String nume) {
+    public Person(int age, String name) {
         this.age = age;
-        this.nume = nume;
+        this.name = name;
     }
 
     public String toString() {
         return "O persoana normala";
     }
 
-    public String getNume() {
-        return nume;
+    public String getName() {
+        return name;
     }
 }

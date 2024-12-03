@@ -8,13 +8,9 @@ interface Command {
 /* The Invoker class */
 class Switch {
     private static final int MAX_HISTORY_ITEMS = 10;
-    private Command[] history = new Command[MAX_HISTORY_ITEMS]; // can be
-    // defined as a
-    // collection
+    // history of commands
+    private Command[] history = new Command[MAX_HISTORY_ITEMS];
     private int crtIndex = 0;
-
-    public Switch() {
-    }
 
     public void storeAndExecute(Command cmd) {
         if (crtIndex > 0 && cmd.equals(this.history[crtIndex - 1])) {
@@ -29,9 +25,6 @@ class Switch {
 
 /* The Receiver class */
 class Light {
-    public Light() {
-    }
-
     public void turnOn() {
         System.out.println("The light is on");
     }

@@ -1,4 +1,4 @@
-package IO;
+package io;
 
 import java.io.*;
 
@@ -17,11 +17,11 @@ public class TestRandomAccessFile {
         inout.seek(0);
         System.out.println("The first number is " + inout.readInt());
 
-        inout.seek(1 * 4);
-        System.out.println("The second number is " + inout.readInt());
+        inout.seek(1 * 4+5);
+        System.out.println("The 1.5th number is " + inout.readInt());
 
-        inout.seek(9 * 4);
-        System.out.println("The tenth number is " + inout.readInt());
+        inout.seek(10 * 4);
+        System.out.println("The 10th number is " + inout.readInt());
 
         inout.writeInt(555);
 

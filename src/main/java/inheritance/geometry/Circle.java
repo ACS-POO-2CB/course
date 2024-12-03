@@ -1,6 +1,9 @@
 package inheritance.geometry;
 
-import java.awt.*;
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Circle extends GeometricObject {
     private double radius;
@@ -27,7 +30,8 @@ public class Circle extends GeometricObject {
     /**
      * Return area
      */
-    public double getArea() {
+    public Double getArea() {
+        var l =  new ArrayList<Integer>();
         return Math.PI * Math.pow(this.radius, 2);
     }
 

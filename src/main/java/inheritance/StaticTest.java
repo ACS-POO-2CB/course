@@ -4,13 +4,13 @@ class Super {
     static int no = 2000;
 
     static {
-        no = 2001;
-        System.out.println("Super!");
+        no++;
+        System.out.println("Super super!");
     }
 
     static {
-        no++;
-        System.out.println("Super super!");
+        no = 2004;
+        System.out.println("Super!");
     }
 
     public static void doSomething() {
@@ -19,14 +19,15 @@ class Super {
 }
 
 class Sub extends Super {
-    static int no = 1000;
+    static int no = initNo();
 
-    static {
+    static int initNo(){
         System.out.println("Nooo!");
+        return 1000;
     }
 
     public static void doSomething() {
-        System.out.println("Ne-am razgandit si nu mai facem!");
+        System.out.println("Ne-am razgandit si nu mai facem nimic!");
     }
 }
 
@@ -38,10 +39,13 @@ public class StaticTest {
 //        System.out.println(Sub.no);
 
         //try this block instead of the above two lines
+//        Super.doSomething();
 //        Sub.doSomething();
 
+
         //or this block instead of the above lines
-//        new Sub();
-//        new Sub();
+        new Sub();
+        new Sub();
+        new Sub();
     }
 }

@@ -16,6 +16,10 @@ public class Baltagul extends Morometii {
         super.setIlie("Super " + ilie);
     }
 
+    public String getIlie() {
+        return "Am obosit, prea multi Ilie!";
+    }
+
     public static void verifica(Object m) {
         System.out.println(((Baltagul) m).ilie);
         System.out.println(((Morometii) m).ilie);
@@ -36,4 +40,22 @@ public class Baltagul extends Morometii {
         System.out.println(b.getIlie());
         verifica(b);
     }
+}
+
+class Morometii {
+
+    String ilie;
+
+    public Morometii(String ilie) {
+        this.ilie = ilie;
+    }
+
+    public String getIlie() {
+        return ilie;
+    }
+
+    public void setIlie(String ilie) {
+        this.ilie = ilie;
+    }
+
 }
