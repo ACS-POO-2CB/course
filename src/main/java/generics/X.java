@@ -1,8 +1,6 @@
 package generics;
 
-import java.io.Serializable;
-
-class X {
+public class X {
     int x;
 
     public <X extends Number & Comparable<X>> X(X X) {
@@ -10,13 +8,12 @@ class X {
     }
 
     public <X> X(X X) {
-        this.x = 1;
+        this.x = -1;
     }
 
     public <X> X X(X X) {
         return X;
     }
-
 
     @Override
     public String toString() {
