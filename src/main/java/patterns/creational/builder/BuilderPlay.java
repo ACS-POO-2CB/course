@@ -5,7 +5,7 @@ package patterns.creational.builder;
 
 public class BuilderPlay {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 //		Customer customer = new Customer();
 //		customer.setName("John Wick");
 //		Address address = new Address();
@@ -13,15 +13,15 @@ public class BuilderPlay {
 //		address.setCity("Bucuresti");
 //		customer.setAddress(address);
 
-		Customer customer = new CustomerBuilder()
+        Customer customer = new CustomerBuilder()
                 .withName("John Wick")
-			.withAddress(new AddressBuilder()
-				.withStreetName("Splaiul Independentei")
-				.withCity("Bucuresti, Regie")
-				.build())
-			.build();
+                .withAddress(new AddressBuilder()
+                        .withCity("Bucuresti, Regie")
+                        .withStreetName("Splaiul Independentei")
+                        .build())
+                .build();
 
-		System.out.println("Customer name: " + customer.getName());
-		System.out.println("Customer address: " + customer.getAddress().getStreetName());
-	}
+        System.out.println("Customer name: " + customer.getName());
+        System.out.println("Customer address: " + customer.getAddress().getStreetName());
+    }
 }

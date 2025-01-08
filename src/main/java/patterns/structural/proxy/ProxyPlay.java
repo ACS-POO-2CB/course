@@ -28,6 +28,7 @@ public class ProxyPlay {
             return method.invoke(impl, args); // TODO never forget to call real method
          }
       };
+
       DecoratorPlay.BasicMath mathProxy = (DecoratorPlay.BasicMath) Proxy.newProxyInstance(
               ProxyPlay.class.getClassLoader(),
               new Class<?>[]{DecoratorPlay.BasicMath.class},

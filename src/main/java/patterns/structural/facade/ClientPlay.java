@@ -5,5 +5,4 @@ public class ClientPlay {
         ComputerFacade computer = new ComputerFacade();
         computer.start(); // Starting the computer...
     }
-
 }

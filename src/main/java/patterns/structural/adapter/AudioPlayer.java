@@ -1,6 +1,5 @@
 package patterns.structural.adapter;
 
-// AudioPlayer implementing MediaPlayer
 class AudioPlayer implements MediaPlayer {
     MediaAdapter mediaAdapter;
 

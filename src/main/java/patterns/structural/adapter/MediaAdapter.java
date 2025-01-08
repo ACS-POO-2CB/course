@@ -10,7 +10,7 @@ class MediaAdapter implements MediaPlayer {
         } else if (audioType.equalsIgnoreCase("mp4")) {
             advancedMusicPlayer = new Mp4Player();
         } else {
-            throw new UnsupportedAudioFormatException("Invalid media. " + audioType + " format not supported");
+            throw new UnsupportedAudioFormatException("Invalid media: " + audioType + " format not supported");
         }
     }
 

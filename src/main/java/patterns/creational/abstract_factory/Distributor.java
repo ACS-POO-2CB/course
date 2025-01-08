@@ -7,20 +7,20 @@ import patterns.creational.abstract_factory.generic.FurnitureFactory;
 
 public class Distributor {
 
-	private final FurnitureFactory factory;
+    private final FurnitureFactory factory;
 
-	public Distributor(FurnitureFactory factory) {
-		this.factory = factory;
-	}
+    public Distributor(FurnitureFactory factory) {
+        this.factory = factory;
+    }
 
-	public List<Object> getKitchenFurniture() {
-		List<Object> products = Arrays.asList(
-			factory.createTable(),
-			factory.createChair(),
-			factory.createChair(),
-			factory.createTable(),
-			factory.createChair()
-		);
-		return products;
-	}
+    public List<Object> getKitchenFurniture() {
+        List<Object> products = Arrays.asList(
+                factory.createTable(),
+                factory.createChair(),
+                factory.createChair(),
+                factory.createChair(),
+                factory.createChair()
+        );
+        return products;
+    }
 }

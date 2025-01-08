@@ -13,8 +13,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingWorker;
 
 public class SwingWorkerDemo extends JFrame {
-    private static final long serialVersionUID = 1L;
-
     private JButton jbtComputeWithSwingWorker = new JButton("Compute");
     private JTextField jtfLimit1 = new JTextField(8);
     private JTextField jtfResult1 = new JTextField(6);

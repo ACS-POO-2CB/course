@@ -7,7 +7,7 @@ import java.util.List;
 public class IteratorPlay {
     public static void main(String[] args) {
         List<Integer> numbers = new ArrayList<>();
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= 1000; i++) {
             numbers.add(i);
         }
 

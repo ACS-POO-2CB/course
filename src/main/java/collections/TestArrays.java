@@ -34,7 +34,7 @@ public class TestArrays {
 
         List<Integer> list = Arrays.asList(a);
 
-        list.set(13, 10 );
+        list.set(13, 10);
 
         for (Integer i : list)
             System.out.print(i + " ");

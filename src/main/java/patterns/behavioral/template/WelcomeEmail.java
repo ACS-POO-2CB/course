@@ -4,6 +4,6 @@ public class WelcomeEmail extends EmailTemplate {
 
     @Override
     public String createBody() {
-        return "Welcome to our spectacular OOP course!";
+        return "Welcome to this spectacular OOP course!";
     }
 }

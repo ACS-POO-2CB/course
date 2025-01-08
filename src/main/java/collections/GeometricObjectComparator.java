@@ -18,8 +18,7 @@ public class GeometricObjectComparator implements Comparator<AbstractGeometricOb
             return -1;
         else if (area1 == area2)
             return 0;
-        else
-            return 1;
+        return 1;
     }
 
     @Override
@@ -41,8 +40,7 @@ public class GeometricObjectComparator implements Comparator<AbstractGeometricOb
                     return -1;
                 else if (area1 == area2)
                     return 0;
-                else
-                    return 1;
+                return 1;
             }
         });
         set.add(new NewRectangle(8, 5));
@@ -53,6 +51,6 @@ public class GeometricObjectComparator implements Comparator<AbstractGeometricOb
         // Display geometric objects in the tree set
         System.out.println("A sorted set of geometric objects");
         for (AbstractGeometricObject element : set)
-            System.out.println("area = " + element.getArea());
+            System.out.println("Area = " + element.getArea());
     }
 }

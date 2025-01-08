@@ -14,8 +14,6 @@ public class TestCollections {
 
         System.out.println("The initial list is " + arrayList);
 
-        list = null; // Release list
-
         Collections.fill(arrayList, "yellow");
         System.out.println("After filling yellow, the list is " + arrayList);
 
