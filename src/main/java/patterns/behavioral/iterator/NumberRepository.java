@@ -2,32 +2,39 @@ package patterns.behavioral.iterator;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.function.Function;
 
 // Concrete class implementing the Container interface
 public class NumberRepository implements Container {
-    private List<Integer> numbers;
+    private final List<Integer> numbers;
 
     public NumberRepository(List<Integer> numbers) {
         this.numbers = numbers;
     }
 
     @Override
-    public Iterator getIterator() {
-        return new EvenNumberIterator();
+    public Iterator<Integer> getIterator() {
+        return new CustomIterator(this::checkEven);
     }
 
-    public Iterator getPrimeNumberIterator() {
-        return new PrimeNumberIterator();
+    public Iterator<Integer> getPrimeNumberIterator() {
+        return new CustomIterator(this::checkPrime);
     }
 
     // Inner class for iterating over even numbers
-    private class EvenNumberIterator implements Iterator {
+    private class CustomIterator implements Iterator<Integer> {
         private int index = 0;
+        Function<Integer, Boolean> function;
+
+        public CustomIterator(Function<Integer, Boolean> function) {
+            this.function = function;
+        }
 
         @Override
         public boolean hasNext() {
             while (index < numbers.size()) {
-                if (numbers.get(index) % 2 == 0) {
+                if (function.apply(numbers.get(index))) {
                     return true;
                 }
                 index++;
@@ -40,44 +47,23 @@ public class NumberRepository implements Container {
             if (this.hasNext()) {
                 return numbers.get(index++);
             }
-            return null;
+            throw new NoSuchElementException();
         }
     }
 
-    // Inner class for iterating over prime numbers
-    private class PrimeNumberIterator implements Iterator {
-        private int index = 0;
+    boolean checkEven(int number) {
+        return number % 2 == 0;
+    }
 
-        @Override
-        public boolean hasNext() {
-            while (index < numbers.size()) {
-                if (isPrime(numbers.get(index))) {
-                    return true;
-                }
-                index++;
-            }
+    boolean checkPrime(int number) {
+        if (number <= 1) {
             return false;
         }
-
-        @Override
-        public Integer next() {
-            if (this.hasNext()) {
-                return numbers.get(index++);
-            }
-            return null;
-        }
-
-        // Helper method to check if a number is prime
-        private boolean isPrime(int number) {
-            if (number <= 1) {
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
                 return false;
             }
-            for (int i = 2; i <= Math.sqrt(number); i++) {
-                if (number % i == 0) {
-                    return false;
-                }
-            }
-            return true;
         }
+        return true;
     }
 }
