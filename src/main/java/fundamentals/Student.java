@@ -9,6 +9,11 @@ package fundamentals;
 
 
 public class Student {
+    /**
+     * The main method to execute the program.
+     *
+     * @param args Command line arguments
+     */
     public static void main(String[] args) {
         System.out.println("Seria CB!!");
         double avgHeight = 1.75;

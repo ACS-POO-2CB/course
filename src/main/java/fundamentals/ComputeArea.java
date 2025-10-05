@@ -29,20 +29,6 @@ public class ComputeArea {
         // Compute area
         area = Math.PI * Math.pow(radius, 2);
 
-        String s = """
-                Ana
-                are
-                mere
-                """;
-
-        char s1 = 'd';
-
-        switch (s1) {
-            default -> System.out.println("default");
-            case 'a', 'c' -> System.out.println("a");
-            case 'b' -> System.out.println("b");
-        }
-
         // Display results
         System.out.println("Area for the circle of R= " + radius + " is " + area);
     }
