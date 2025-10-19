@@ -3,14 +3,13 @@ package fundamentals;
 public class BreakContinue {
     public static void main(String[] args) {
         int number = 0, sum = 0;
-        w1:
         //cuttof sum >= 100
         while (number < 20) {
             number++;
             sum += number;
-            if (sum >= 100) break w1;
+            if (sum >= 100) break;
         }
-        System.out.println(number+ " " + sum);
+        System.out.println(number + " " + sum);
 
         number = 0;
         sum = 0;
@@ -25,7 +24,7 @@ public class BreakContinue {
                 if (sum >= 50) break w1;
             }
         }
-        System.out.println(number+ " " + sum);
+        System.out.println(number + " " + sum);
 
         number = 0;
         sum = 0;
@@ -36,6 +35,6 @@ public class BreakContinue {
                 continue;
             sum += number;
         }
-        System.out.println(number+ " " + sum);
+        System.out.println(number + " " + sum);
     }
 }

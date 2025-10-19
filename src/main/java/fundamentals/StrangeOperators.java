@@ -15,7 +15,7 @@ public class StrangeOperators {
         a = b += c = 5;
         System.out.println(a + " " + b + " " + c);
 
-        char ch = 'C'; // ASCII vzalue of 'C' is 67
+        char ch = 'C'; // ASCII value of 'C' is 67
         int i = +ch;
         int j = -ch;
         int k = ch += 'c'; // ASCII value of 'c' is 99
