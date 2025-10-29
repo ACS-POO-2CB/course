@@ -26,13 +26,12 @@ public class TestGeometricObject {
         for (GeometricObject go : vector) {
             System.out.println(go.getColor() + " " + go.getDateCreated());
             if (go instanceof Circle go1) {
+                //go1 = (Circle) go
                 System.out.println(go1.getArea() + " " + go1.getPerimeter());
                 go1.toString();
             }
             else if (go instanceof Rectangle)
                 System.out.println(((Rectangle) go).getArea() + " " + ((Rectangle) go).getPerimeter());
-
         }
-
     }
 }

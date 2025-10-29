@@ -1,13 +1,8 @@
 package inheritance;
 
-public class Faculty extends Employee {
-
-    public static void main(String[] args) {
-        new Faculty();
-    }
-
-    public Faculty() {
-        System.out.println("(4) Faculty's no-arg constructor is invoked");
+class GoodPerson {
+    public GoodPerson() {
+        System.out.println("(1) Person's no-arg constructor is invoked");
     }
 }
 
@@ -22,8 +17,13 @@ class Employee extends GoodPerson {
     }
 }
 
-class GoodPerson {
-    public GoodPerson() {
-        System.out.println("(1) Person's no-arg constructor is invoked");
+public class Faculty extends Employee {
+
+    public static void main(String[] args) {
+        new Faculty();
+    }
+
+    public Faculty() {
+        System.out.println("(4) Faculty's no-arg constructor is invoked");
     }
 }

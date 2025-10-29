@@ -10,7 +10,7 @@ public class Professor extends Human {
 
     public void speak() {
         System.out.println("10 ai facut foarte bine!");
-//        super.speak();
+        super.speak();
     }
 
     public static void main(String[] args) {

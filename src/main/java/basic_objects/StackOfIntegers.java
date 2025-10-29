@@ -43,7 +43,7 @@ public class StackOfIntegers {
     }
 
     public static void main(String[] args) {
-        StackOfIntegers stack = new StackOfIntegers(10);
+        StackOfIntegers stack = new StackOfIntegers();
         System.out.println(stack.push(1));
         System.out.println(stack.push(2));
         System.out.println(stack.pop());

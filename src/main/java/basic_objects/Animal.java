@@ -12,23 +12,14 @@ import java.lang.ref.Cleaner;
  */
 public class Animal {
 
-    /**
-     * greutatea animalului in kg
-     */
     private long weight;
     boolean isHerbivor;
     static int noAnimals;
 
-    // Cleaner instance
+    // TODO add cleaner
     private static final Cleaner cleaner = Cleaner.create();
     private Cleaner.Cleanable cleanable;
 
-    /**
-     * Constructorul default
-     *
-     * @param weight     greutatea animalului
-     * @param isHerbivor daca animalul este ierbivor sau nu
-     */
     public Animal(long weight, boolean isHerbivor) {
         this.weight = weight;
         this.isHerbivor = isHerbivor;
@@ -37,11 +28,9 @@ public class Animal {
         cleanable = cleaner.register(this, Animal::deleteAnimal); //method reference operator
     }
 
-    public Animal(long greutate) {
-        this(greutate, true);
+    public Animal(long weight) {
+        this(weight, true);
     }
-
-    //TODO add other colors
 
     public long getWeight() {
         return weight;
@@ -66,7 +55,7 @@ public class Animal {
     //please do not use this method
 //    @Override
 //    protected void finalize() throws Throwable {
-//        noAnimals--;
+//        deleteAnimal();
 //    }
 
     public static void main(String[] args) throws Throwable {
@@ -79,12 +68,10 @@ public class Animal {
         System.out.println("Going wild with animals:" + noAnimals);
 
         Animal animal;
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < Math.pow(10,7); i++) {
             animal = new Animal(200, true);
-//            Animal.sterge1Animal();
         }
 
-//        Thread.sleep(10000);
         System.out.println(noAnimals);
     }
 }

@@ -10,32 +10,24 @@ public class MagicCircle {
         this.color = color;
     }
 
-    public MagicCircle(float radius, String color) {
-        this((double) radius, color);
-    }
-
     public MagicCircle() {
-        this(1, "blue");
+        this(1d, "red");
     }
 
     public MagicCircle(double radius) {
         this(radius, "green");
     }
 
-    double getArea() {
-        return Math.PI * Math.pow(radius, 2);
-    }
-
     public double getRadius() {
         return radius;
     }
 
-    public String getColor() {
-        return color;
-    }
-
     public void setRadius(double radius) {
         this.radius = radius;
+    }
+
+    public String getColor() {
+        return color;
     }
 
     public void setColor(String color) {
@@ -50,25 +42,32 @@ public class MagicCircle {
                 '}';
     }
 
-    static void facemCeva(MagicCircle magicCircle) {
-        System.out.println("Ceva awesome!");
+    static void doSomething(MagicCircle magicCircle) {
+        System.out.println("Awesome!" + magicCircle.getRadius() + " " + magicCircle.getColor());
     }
 
-    void facemCeva() {
-        facemCeva(this);
+    void doSomething() {
+        doSomething(this);
+    }
+
+    public double getArea() {
+        return Math.PI * Math.pow(radius, 2);
     }
 
     public static void main(String[] args) {
         MagicCircle circle1 = new MagicCircle();
         MagicCircle circle3, circle4, circle2;
         circle4 = circle3 = circle2 = new MagicCircle();
+        circle3.setRadius(20);
+        System.out.println(circle4.getRadius());
+
         System.out.println(circle1.toString() + " " + circle2);
 
+        circle1=circle2=null;
+        System.out.println(circle1 + " " + circle2);
+        System.out.println(circle1==circle2);
 
-//        circle1=circle2=null;
-//        System.out.println(circle1 + " " + circle2);
-//        System.out.println(circle1==circle2);
-        circle1.facemCeva();
-        System.out.println(circle1.color + " " + circle1.radius + " " + circle1.getArea());
+        circle3.doSomething();
+        System.out.println(circle3.color + " " + circle3.radius);
     }
 }

@@ -4,7 +4,7 @@ public class SeriaCB {
     private Integer noStudents;
 
     public SeriaCB() {
-        this(128);
+        this(120);
     }
 
     private SeriaCB(int noStudents) {
@@ -24,11 +24,12 @@ public class SeriaCB {
     }
 
     public void increment(int y) {
-        this.noStudents += y;
+//        this.noStudents += y;
+        SeriaCB.increment(this, y);
     }
 
     public void increment() {
-        SeriaCB.increment(this,10);
+        this.increment(10);
     }
 
     public static void main(String[] args) {

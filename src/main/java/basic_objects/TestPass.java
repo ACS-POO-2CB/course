@@ -5,6 +5,7 @@ public class TestPass {
      * Print a table of areas for radius
      */
     public static void printAreas(MagicCircle c, int n) {
+        c.setRadius(20);
         System.out.println("Radius\tArea");
         c = new MagicCircle(10);
         while (n >= 1) {

@@ -33,10 +33,10 @@ class Sub extends Super {
 
 public class StaticTest {
     public static void main(String[] args) {
-//        Sub s= new Sub();
-//        System.out.println("Fluffy");
-//        System.out.println(Super.no);
-//        System.out.println(Sub.no);
+        Sub s= new Sub();
+        System.out.println("Fluffy");
+        System.out.println(Super.no);
+        System.out.println(Sub.no);
 
         //try this block instead of the above two lines
 //        Super.doSomething();
@@ -44,8 +44,8 @@ public class StaticTest {
 
 
         //or this block instead of the above lines
-        new Sub();
-        new Sub();
-        new Sub();
+//        new Sub();
+//        new Sub();
+//        new Sub();
     }
 }
