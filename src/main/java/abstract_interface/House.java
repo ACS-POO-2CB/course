@@ -63,15 +63,6 @@ public class House implements Cloneable, Comparable<House> {
             return 0;
     }
 
-    public Object clone() throws CloneNotSupportedException {
-        // Perform a shallow copy
-        House obj = (House) super.clone();
-        // Deep copy on whenBuilt
-        obj.setWhenBuilt(new Date());
-        obj.setId(obj.getId()+1);
-        return obj;
-    }
-
     public static void main(String[] args) throws Exception {
         House house1 = new House(1, 1750.50);
         House house2;
@@ -84,9 +75,14 @@ public class House implements Cloneable, Comparable<House> {
         System.out.println(house1.getWhenBuilt() + " vs " + house2.getWhenBuilt());
 
         System.out.println(house1.getWhenBuilt() == house2.getWhenBuilt());
-
-        Integer[] intArray = {1, 2, 3};
-        System.out.println(""+intArray[0] + intArray[1] + intArray[2]);
-
     }
+
+//        public Object clone() throws CloneNotSupportedException {
+//        // Perform a shallow copy
+//        House obj = (House) super.clone();
+//        // Deep copy on whenBuilt
+//        obj.setWhenBuilt(new Date());
+//        obj.setId(obj.getId()+1);
+//        return obj;
+//    }
 }

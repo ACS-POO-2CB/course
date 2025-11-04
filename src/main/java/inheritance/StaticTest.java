@@ -14,7 +14,7 @@ class Super {
     }
 
     public static void doSomething() {
-        System.out.println("Facem ceva super!");
+        System.out.println("We are doing something super!");
     }
 }
 
@@ -27,13 +27,14 @@ class Sub extends Super {
     }
 
     public static void doSomething() {
-        System.out.println("Ne-am razgandit si nu mai facem nimic!");
+        System.out.println("We changed our mind! Nothing!");
     }
 }
 
 public class StaticTest {
     public static void main(String[] args) {
         Sub s= new Sub();
+
         System.out.println("Fluffy");
         System.out.println(Super.no);
         System.out.println(Sub.no);
@@ -42,10 +43,9 @@ public class StaticTest {
 //        Super.doSomething();
 //        Sub.doSomething();
 
-
         //or this block instead of the above lines
-//        new Sub();
-//        new Sub();
-//        new Sub();
+//        new Sub().doSomething();
+//        new Sub().doSomething();
+//        new Sub().doSomething();
     }
 }

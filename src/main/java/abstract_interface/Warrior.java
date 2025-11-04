@@ -2,10 +2,10 @@ package abstract_interface;
 
 interface Hero {
     default String getWarCry() {
-        return "Uraaaaaaaa!";
+        return "Hurray!";
     }
     static String activateSwordAura() {
-        return "S-a activat aura sabiei DPS+2";
+        return "Sword aura DPS+2";
     }
 }
 
@@ -18,7 +18,7 @@ interface Spartan {
         return getWarCry();
     }
     static String activateSwordAura() {
-        return "S-a activat aura sabiei DPS+9";
+        return "Sword aura DPS+9";
     }
 }
 

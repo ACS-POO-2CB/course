@@ -52,7 +52,7 @@ public class NewRectangle extends AbstractGeometricObject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NewRectangle that = (NewRectangle) o;
-        return Double.compare(that.width, width) == 0 && Double.compare(that.height, height) == 0;
+        return Double.compare(that.width, this.width) == 0 && Double.compare(that.height, this.height) == 0;
     }
 
     @Override

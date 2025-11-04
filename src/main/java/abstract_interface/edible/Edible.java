@@ -2,7 +2,7 @@ package abstract_interface.edible;
 
 public interface Edible {
 	/** Describe how to eat */
-	String howToEat();
+    String howToEat();
 
 	default void print() {
 		System.out.println(getClassName()+": I am an edible object");
@@ -13,6 +13,6 @@ public interface Edible {
 	}
 
 	static String getClassNameStatic() {
-		return "Edible";
+		return "Edible printed nicely";
 	}
 }

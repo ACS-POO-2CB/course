@@ -5,7 +5,8 @@ import inheritance.geometry.GeometricObject;
 import java.awt.*;
 
 public abstract class AbstractGeometricObject extends GeometricObject {
-	public AbstractGeometricObject() {
+
+    public AbstractGeometricObject() {
 		super(Color.MAGENTA.toString(),true);
 	}
 

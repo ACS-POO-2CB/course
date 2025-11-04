@@ -22,22 +22,22 @@ public class DataStructure {
     }
 
     public Iterator<Integer> getIterator() {
-        return new EvenIterator();
+        return new SpecialIterator();
     }
 
     public static void process() {
-        EvenIterator ev = new DataStructure().new EvenIterator();
+        SpecialIterator ev = new DataStructure().new SpecialIterator();
     }
 
     interface DataStructureIterator extends Iterator<Integer> {
 
     }
 
-    private class EvenIterator implements DataStructureIterator {
+    private class SpecialIterator implements DataStructureIterator {
         private int nextIndex = 0;
         static int noInterators;
 
-        public EvenIterator() {
+        public SpecialIterator() {
             noInterators++;
         }
 
@@ -52,7 +52,7 @@ public class DataStructure {
         }
     }
 
-    public class Iterator3 extends EvenIterator {
+    public class Iterator3 extends SpecialIterator {
         private int nextIndex = 0;
 
         public boolean hasNext() {
@@ -68,16 +68,16 @@ public class DataStructure {
 
     public static void main(String[] s) {
         DataStructure ds1 = new DataStructure();
-        DataStructure.EvenIterator ei1 = ds1.new EvenIterator();
+        SpecialIterator ei1 = ds1.new SpecialIterator();
         ds1.printSpecial(ei1);
         ds1.printSpecial(ds1.getIterator());
-        ds1.printSpecial(ds1.new EvenIterator());
+        ds1.printSpecial(ds1.new SpecialIterator());
         ds1.printSpecial(ds1.new Iterator3());
 
         DataStructure ds2 = new DataStructure();
         ds2.printSpecial(ds2.getIterator());
-        ds2.printSpecial(ds2.new EvenIterator());
+        ds2.printSpecial(ds2.new SpecialIterator());
 
-        System.out.println("Number of iterators: " + DataStructure.EvenIterator.noInterators);
+        System.out.println("Number of iterators: " + SpecialIterator.noInterators);
     }
 }

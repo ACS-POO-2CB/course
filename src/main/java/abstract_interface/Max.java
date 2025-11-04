@@ -1,4 +1,4 @@
-package abstract_interface.edible;
+package abstract_interface;
 
 import java.util.Date;
 
@@ -20,13 +20,13 @@ public class Max {
     }
 
     public static void main(String[] args) {
-        Date d1=new Date();
-        Date d2=new Date();
+        Date d1 = new Date();
+        Date d2 = new Date();
 
-        String s1="abc";
-        String s2="def";
+        String s1 = "abc";
+        String s2 = "def";
 
-        System.out.println("Max date is "+max(d1,d2));
+        System.out.println("Max date is " + max(d1, d2));
 
         System.out.println(s1.compareTo(s2));
         System.out.println(s2.compareTo(s1));

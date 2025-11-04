@@ -48,7 +48,7 @@ public class NewCircle extends AbstractGeometricObject {
 
     @Override
     public String toString() {
-        return "Un cerc extraordinar";
+        return "A great circle with radius " + radius;
     }
 
     /* Print the circle info */

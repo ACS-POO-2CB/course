@@ -17,8 +17,15 @@ class Switch {
             System.out.println("The same command was executed before");
         } else {
             this.history[crtIndex++] = cmd;
-            crtIndex = (crtIndex++) % MAX_HISTORY_ITEMS;
+            crtIndex = crtIndex % MAX_HISTORY_ITEMS;
             cmd.execute();
+        }
+    }
+
+    public void printHistory() {
+        System.out.println("Current history:");
+        for (int i = crtIndex - 1; i >= 0; i--) {
+            System.out.println(this.history[i]);
         }
     }
 }
@@ -71,15 +78,12 @@ public class PressSwitch {
 
         for (String command : commands) {
             switch (command) {
-                case "ON":
-                    mySwitch.storeAndExecute(switchUp);
-                    break;
-                case "OFF":
-                    mySwitch.storeAndExecute(switchDown);
-                    break;
-                default:
-                    System.err.println("Argument \"ON\" or \"OFF\" is required.");
+                case "ON" -> mySwitch.storeAndExecute(switchUp);
+                case "OFF" -> mySwitch.storeAndExecute(switchDown);
+                default -> System.err.println("Argument \"ON\" or \"OFF\" is required.");
             }
         }
+
+        mySwitch.printHistory();
     }
 }
