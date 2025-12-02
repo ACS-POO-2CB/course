@@ -6,6 +6,8 @@ public class HelloWorldAnonymousClasses {
         void greet();
 
         void greetSomeone(String someone);
+
+        String getLang();
     }
 
     public void sayHello(String name) {
@@ -18,6 +20,10 @@ public class HelloWorldAnonymousClasses {
                     public void greetSomeone(String someone) {
                         System.out.println("Hello " + someone);
                     }
+
+                    public String getLang() {
+                        return "EN";
+                    }
                 },
                 new HelloWorld() {
                     public void greet() {
@@ -26,6 +32,10 @@ public class HelloWorldAnonymousClasses {
 
                     public void greetSomeone(String someone) {
                         System.out.println("Bonsoir " + someone);
+                    }
+
+                    public String getLang() {
+                        return "FR";
                     }
                 },
                 new HelloWorld() {
@@ -36,6 +46,10 @@ public class HelloWorldAnonymousClasses {
                     public void greetSomeone(String someone) {
                         System.out.println("Hola " + someone);
                     }
+
+                    public String getLang() {
+                        return "ES";
+                    }
                 },
                 new HelloWorld() {
                     public void greet() {
@@ -45,8 +59,12 @@ public class HelloWorldAnonymousClasses {
                     public void greetSomeone(String someone) {
                         System.out.println("Salut " + someone);
                     }
+
+                    public String getLang() {
+                        return "RO";
+                    }
                 }}) {
-            hw.greetSomeone(name);
+            hw.greetSomeone(name + " (" + hw.getLang() + ")");
         }
     }
 

@@ -10,8 +10,8 @@ public class QuotientWithMethod {
 
     public static int quotient2(int number1, int number2) throws IllegalArgumentException {
         if (number2 == 0) {
-            throw new RuntimeException("Ana are mere");
-//			System.out.println("Ana are mere");
+            throw new RuntimeException("Ana n-are mere");
+//			System.out.println("Ana n-are mere");
         }
         return number1 / number2;
     }
@@ -30,7 +30,12 @@ public class QuotientWithMethod {
             System.out.println(number1 + " / " + number2 + " is " + result);
         } catch (Exception ex) {
             System.err.println("Exception: an integer cannot be divided by zero: " + ex.getMessage());
-            throw new RuntimeException();
+            try {
+                throw new RuntimeException();
+            }
+            finally {
+                System.err.println("We decided to do nothing!");
+            }
         } finally {
             System.out.println("Execution finishes ...");
             input.close();

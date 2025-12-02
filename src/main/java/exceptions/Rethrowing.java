@@ -2,6 +2,7 @@ package exceptions;
 
 class Exception1 extends Exception {
 }
+
 class Exception2 extends Exception {
 }
 

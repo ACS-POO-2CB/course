@@ -3,7 +3,7 @@ package io;
 public class IntString {
     private int x;
 
-    public static void modificaInt(Integer x) {
+    public static void changeInt(Integer x) {
         x++;
     }
 
@@ -15,7 +15,7 @@ public class IntString {
         this.x = x;
     }
 
-    public static void modificaInt(IntString x) {
+    public static void changeInt(IntString x) {
 //        x.setX(x.getX()+1);
         x.x++;
     }
@@ -53,12 +53,12 @@ public class IntString {
         System.out.println(i3==i4);
 
         System.out.println("-----------------");
-        modificaInt(i3);
+        changeInt(i3);
         System.out.println(i3);
 
         IntString i5=new IntString();
         System.out.println(i5);
-        modificaInt(i5);
+        changeInt(i5);
         System.out.println(i5);
     }
 }

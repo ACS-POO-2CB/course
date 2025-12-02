@@ -3,7 +3,7 @@ package exceptions;
 import java.util.Scanner;
 
 public class QuotientWithException {
-    public static void main (String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner input = null;
         try {
             input = new Scanner(System.in);
@@ -14,13 +14,10 @@ public class QuotientWithException {
             int number2 = input.nextInt();
 
             if (number2 == 0)
-                throw new ArithmeticException("Divisor cannot be zero");
+                throw new ArithmeticException("Divisor cannot be zero created by us!");
 
             System.out.println(number1 + " / " + number2 + " is " + (number1 / number2));
-        } catch (ArithmeticException ex) {
-            System.out.println("Exception: an integer cannot be divided by zero: " + ex.getMessage());
-        }
-        finally {
+        } finally {
             System.out.println("Execution finishes ...");
             input.close();
         }

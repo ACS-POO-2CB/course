@@ -45,9 +45,9 @@ public class OnlyThreeExceptions {
             try {
                 Options.execute(option);
             } catch (NullPointerException | ArithmeticException ex) {
-                System.out.println("Specific exception on " + option + ": " + ex.getMessage());
+                System.err.println("Specific exception on " + option + ": " + ex.getMessage());
             } catch (Exception ex) {
-                System.out.println("General exception on " + option + ": " + ex.getClass() + " / " + ex.getMessage());
+                System.err.println("General exception on " + option + ": " + ex.getClass() + " / " + ex.getMessage());
 //                throw new RuntimeException(ex);
             }
             finally {

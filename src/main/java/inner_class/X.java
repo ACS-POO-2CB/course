@@ -36,8 +36,10 @@ public class X {
                     this.x = X.Y.this.x;
                 }
             }
+
             x X = new x(x) {
             };
+
             System.out.println(x + " " + X.x + " " + this.x + " " + X.this.x);
         }
     }

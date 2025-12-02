@@ -69,6 +69,7 @@ public class StaticExample {
         Outer.Inner inner = outer.new Inner(1);
         System.out.println(inner);
         System.out.println(Outer.Inner.y);
+//        inner = outer.new Inner(2).new Inner(3).new Inner(4).new Inner(5).new Inner(6);
 
         System.out.println("-----------------");
         // no need of reference of object of outer class

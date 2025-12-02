@@ -7,14 +7,12 @@ import java.util.Date;
  */
 public class House implements Cloneable, Comparable<House> {
     private int id;
-    /**
-     * Aria unei case
-     */
     private double area;
     private java.util.Date whenBuilt;
 
     /**
      * Default constructor
+     *
      * @param id   identifier
      * @param area needs to be used
      */
@@ -64,6 +62,9 @@ public class House implements Cloneable, Comparable<House> {
     }
 
     public static void main(String[] args) throws Exception {
+        Integer i = new Integer("1");
+
+
         House house1 = new House(1, 1750.50);
         House house2;
         Thread.sleep(1000);
@@ -77,12 +78,16 @@ public class House implements Cloneable, Comparable<House> {
         System.out.println(house1.getWhenBuilt() == house2.getWhenBuilt());
     }
 
-//        public Object clone() throws CloneNotSupportedException {
-//        // Perform a shallow copy
+//    public Object clone() throws CloneNotSupportedException {
+//        // Perform a shallow copy - never forget this!
 //        House obj = (House) super.clone();
 //        // Deep copy on whenBuilt
 //        obj.setWhenBuilt(new Date());
-//        obj.setId(obj.getId()+1);
+//        obj.setId(obj.getId() + 1);
 //        return obj;
 //    }
+
+    public Object clone()  {
+        return new House(this.id+1, this.area);
+    }
 }
