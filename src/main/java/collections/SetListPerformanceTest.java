@@ -5,13 +5,13 @@ import java.util.*;
 public class SetListPerformanceTest {
     public static void main(String[] args) {
         Collection<Integer> set1 = new HashSet<Integer>();
-        System.out.println("Time for hash set is " + getTestTime(set1, 60000) + " milliseconds.");
+        System.out.println("Time for hash set is " + getTestTime(set1, 600000) + " milliseconds.");
 
         Collection<Integer> set2 = new LinkedHashSet<Integer>();
-        System.out.println("Time for linked hash set is " + getTestTime(set2, 60000) + " milliseconds.");
+        System.out.println("Time for linked hash set is " + getTestTime(set2, 600000) + " milliseconds.");
 
         Collection<Integer> set3 = new TreeSet<Integer>();
-        System.out.println("Time for tree set is " + getTestTime(set3, 60000) + " milliseconds.");
+        System.out.println("Time for tree set is " + getTestTime(set3, 600000) + " milliseconds.");
 
         Collection<Integer> list1 = new ArrayList<Integer>();
         System.out.println("Time for array list is " + getTestTime(list1, 60000) + " milliseconds.");

@@ -15,7 +15,7 @@ public class GenericStack<E> {
         return list.get(getSize() - 1);
     }
 
-    public void push(E object) {
+    public <F extends E> void push(F object) {
         list.add(object);
     }
 
@@ -39,8 +39,14 @@ public class GenericStack<E> {
         System.out.println();
     }
 
-    public static <E extends Number> void printNumbers(List<E> list) {
-        for (E e : list)
+    public static <F> void printGeneric(GenericStack<F> stack) {
+        for (F e : stack.getList())
+            System.out.print(e + " ");
+        System.out.println();
+    }
+
+    public static <E extends Number> void printNumbers(GenericStack<E> stack) {
+        for (E e : stack.getList())
             System.out.print(e.doubleValue() + " ");
         System.out.println();
     }
@@ -53,13 +59,15 @@ public class GenericStack<E> {
             stack1.push(s);
         stack1.push(no.toString());
         print(stack1.getList());
-//        printNumbers(stack1.getList());
+//        printNumbers(stack1);
 
         GenericStack<Integer> stack2 = new GenericStack();
 
         List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
         for (Integer i : integers)
             stack2.push(i);
-        printNumbers(stack2.getList());
+        printNumbers(stack2);
     }
 }
+
+class X2<X> { public <X> X X(X X) { return X; } }

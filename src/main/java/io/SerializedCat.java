@@ -9,10 +9,10 @@ import java.io.Serializable;
 class Cat {
     private String description;
 
-//    public Cat() {
-//        this.description = "I am fluffy";
-//        System.out.println("Default cat");
-//    }
+    public Cat() {
+        this.description = "I am fluffy";
+        System.out.println("Default cat");
+    }
 
     public Cat(String description) {
         this.description = description;

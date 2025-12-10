@@ -1,6 +1,6 @@
 package generics;
 
-public class WildCardDemo1 <E> {
+public class WildCardDemo1<E> {
     E var;
 
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class WildCardDemo1 <E> {
     public static double max(GenericStack<? extends Number> stack) {
         double max = stack.pop().doubleValue(); // initialize max
         while (!stack.isEmpty()) {
-            max=Math.max(max,stack.pop().doubleValue());
+            max = Math.max(max, stack.pop().doubleValue());
         }
         return max;
     }

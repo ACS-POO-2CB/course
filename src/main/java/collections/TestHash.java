@@ -16,8 +16,8 @@ public class TestHash {
 
     @Override
     public int hashCode() {
-//        return a % 10;
-       return Objects.hash(a, s, a, a, s);
+        return a % 10;
+//       return Objects.hash(a, s, a, a, s);
     }
 
     @Override
