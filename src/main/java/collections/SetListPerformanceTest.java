@@ -4,27 +4,27 @@ import java.util.*;
 
 public class SetListPerformanceTest {
     public static void main(String[] args) {
-        Collection<Integer> set1 = new HashSet<Integer>();
+        Collection<Integer> set1 = new HashSet<>();
         System.out.println("Time for hash set is " + getTestTime(set1, 600000) + " milliseconds.");
 
-        Collection<Integer> set2 = new LinkedHashSet<Integer>();
+        Collection<Integer> set2 = new LinkedHashSet<>();
         System.out.println("Time for linked hash set is " + getTestTime(set2, 600000) + " milliseconds.");
 
-        Collection<Integer> set3 = new TreeSet<Integer>();
+        Collection<Integer> set3 = new TreeSet<>();
         System.out.println("Time for tree set is " + getTestTime(set3, 600000) + " milliseconds.");
 
-        Collection<Integer> list1 = new ArrayList<Integer>();
-        System.out.println("Time for array list is " + getTestTime(list1, 60000) + " milliseconds.");
+        Collection<Integer> list1 = new ArrayList<>();
+        System.out.println("Time for array list is " + getTestTime(list1, 600000) + " milliseconds.");
 
-        Collection<Integer> list2 = new LinkedList<Integer>();
-        System.out.println("Time for linked list is " + getTestTime(list2, 60000) + " milliseconds.");
+        Collection<Integer> list2 = new LinkedList<>();
+        System.out.println("Time for linked list is " + getTestTime(list2, 600000) + " milliseconds.");
     }
 
     public static long getTestTime(Collection<Integer> c, int size) {
         long startTime = System.currentTimeMillis();
 
         // Add numbers 0, 1, 2, ..., size - 1 to the array list
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < size; i++)
             list.add(i);
 

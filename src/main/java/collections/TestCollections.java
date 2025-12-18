@@ -10,7 +10,7 @@ public class TestCollections {
         List<String> list = Collections.nCopies(3, "red");
 
         // Create an array list
-        ArrayList<String> arrayList = new ArrayList<String>(list);
+        ArrayList<String> arrayList = new ArrayList<>(list);
 
         System.out.println("The initial list is " + arrayList);
 

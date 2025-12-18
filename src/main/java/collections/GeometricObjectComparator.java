@@ -28,8 +28,7 @@ public class GeometricObjectComparator implements Comparator<AbstractGeometricOb
 
     public static void main(String[] args) {
         // Create a tree set for geometric objects using a comparator
-        Set<AbstractGeometricObject> set = new TreeSet<AbstractGeometricObject>(new
-                GeometricObjectComparator());
+        Set<AbstractGeometricObject> set = new TreeSet<>(new GeometricObjectComparator());
 
 //        Set<AbstractGeometricObject> set = new TreeSet(new Comparator<AbstractGeometricObject>() {
 //            public int compare(AbstractGeometricObject o1, AbstractGeometricObject o2) {

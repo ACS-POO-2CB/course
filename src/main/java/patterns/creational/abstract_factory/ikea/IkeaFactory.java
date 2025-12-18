@@ -14,3 +14,4 @@ public class IkeaFactory implements FurnitureFactory {
         return new IkeaTable();
     }
 }
+

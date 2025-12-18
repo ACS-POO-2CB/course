@@ -19,8 +19,12 @@ public class FactoryPlay {
 
         System.out.println("Delivered products: " + kitchen);
 
+        IO.println("Default products: " + valeniFactory.getDefaultOrder());
+
         kitchen = ikeaDistributor.getKitchenFurniture();
 
         System.out.println("Delivered products: " + kitchen);
+
+        IO.println("Default products: " + ikeaFactory.getDefaultOrder());
     }
 }

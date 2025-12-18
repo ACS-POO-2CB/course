@@ -10,23 +10,22 @@ public class TestHash {
     private String s;
 
     public TestHash(int a) {
-        super();
         this.a = a;
     }
 
     @Override
     public int hashCode() {
         return a % 10;
-//       return Objects.hash(a, s, a, a, s);
+//        return Objects.hash(2 * a + "", s, a, a, s);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        TestHash other = (TestHash) obj;
-        if (this.hashCode() != other.hashCode())
-            return false;
-        return true;
-    }
+//    @Override
+//    public boolean equals(Object obj) {
+//        TestHash other = (TestHash) obj;
+//        if (this.hashCode() != other.hashCode())
+//            return false;
+//        return true;
+//    }
 
     @Override
     public String toString() {

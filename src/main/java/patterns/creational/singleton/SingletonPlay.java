@@ -1,7 +1,7 @@
 package patterns.creational.singleton;
 
 public class SingletonPlay {
-    private static Unique instance =Unique.getInstance();
+    private static Unique instance = Unique.getInstance();
 
     public static void main(String[] args) {
         System.out.println("Starting...");
@@ -9,6 +9,7 @@ public class SingletonPlay {
         System.out.println(Unique.getInstance().getSetting());
         System.out.println(Unique.getInstance().getSetting());
         System.out.println(Unique.getInstance().getSetting());
+        IO.println(instance == Unique.getInstance());
     }
 }
 
