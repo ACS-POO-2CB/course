@@ -9,6 +9,6 @@ public class ObserverPlay {
       GrannyDownstrairs g = new GrannyDownstrairs();
       g.addSubscriber(new Neighbour(1));
       g.addSubscriber(new Neighbour(2));
-      g.spreadTheNews("Suspicios activity opposite the door - maybe a stalker?");
+      g.spreadTheNews("Suspicious activity opposite the door - maybe a stalker?");
    }
 }
