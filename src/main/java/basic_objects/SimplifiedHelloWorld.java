@@ -8,14 +8,14 @@ public class SimplifiedHelloWorld {
     }
 
     void main() {
-        //  SimplifiedHelloWorld app = new SimplifiedHelloWorld();
-        //  app.main(args);
+        SimplifiedHelloWorld app = new SimplifiedHelloWorld(1);
+        SimplifiedHelloWorld.main(new String[] {app.getClass().getName()});
         IO.println("New Hello, World!");
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Hello, World!!!");
-IO.println(Arrays.asList(args));
+        IO.println(Arrays.asList(args));
         SimplifiedHelloWorld simplifiedHelloWorld = new SimplifiedHelloWorld(1);
     }
 }

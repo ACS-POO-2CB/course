@@ -56,12 +56,13 @@ public class ImmutableInt {
         changeInt(i5);
         System.out.println(i5);
 
-        String s3 = new String("Am venit și azi la curs");
+        System.out.println("-----------------");
 
-        String s1 = "Am venit și azi la curs";
-        String s2 = "Am venit și azi la curs";
+        String s3 = new String("Java rocks");
 
-//        System.out.println(s1 + " Am venit");
+        String s1 = "Java rocks";
+        String s2 = "Java rocks";
+
         System.out.println(s1 == s2);
         System.out.println(s2 == s3);
     }

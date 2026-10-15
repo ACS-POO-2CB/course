@@ -14,14 +14,14 @@ public class BreakContinue {
         number = 0;
         sum = 0;
         //small increments and cuttof sum >= 50
-        w1:
+        outerLoop:
         while (number < 20) {
             number++;
             sum += number;
-            w2:
+            innerLoop:
             while (sum < 100) {
                 sum += number;
-                if (sum >= 50) break w1;
+                if (sum >= 50) break outerLoop;
             }
         }
         System.out.println(number + " " + sum);
@@ -31,8 +31,7 @@ public class BreakContinue {
         //skip 10 and 11
         while (number < 20) {
             number++;
-            if (number == 10 || number == 11)
-                continue;
+            if (number == 10 || number == 11) continue;
             sum += number;
         }
         System.out.println(number + " " + sum);

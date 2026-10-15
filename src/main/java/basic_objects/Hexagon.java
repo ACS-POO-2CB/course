@@ -3,14 +3,14 @@ package basic_objects;
 //O clasa prea urata pentru a fi scrisa vreodata
 public class Hexagon {
 
-    static int no1;
+    static int no;
 
     static {
-        no1 = -1;
+        no = -1;
     }
 
     static {
-        no1 = 0;
+        no = 0;
     }
 
     int edge;
@@ -22,7 +22,7 @@ public class Hexagon {
      */
     public Hexagon(int edge) {
         this.edge = edge;
-        no1++;
+        no++;
     }
 
     public int getEdge() {
@@ -44,15 +44,15 @@ public class Hexagon {
 
     public static void main(String[] args) {
         Hexagon h1 = new Hexagon(100);
-        Hexagon[] vect = {h1,h1,h1};
+        Hexagon[] array = {h1,h1,h1};
         //Arrays.asList(h1,h1).toArray(new Hexagon[]{})
 
-        System.out.println(vect[0]);
+        System.out.println(array[0]);
         h1.edge =50;
-        System.out.println(vect[2].edge);
+        System.out.println(array[2].edge);
 
-        Hexagon.changeHexagon(vect);
-        System.out.println(vect[0]);
-        System.out.println(no1);
+        Hexagon.changeHexagon(array);
+        System.out.println(array[0]);
+        System.out.println(no);
     }
 }

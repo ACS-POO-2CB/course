@@ -17,12 +17,12 @@ public class Swap {
     }
 
     public static void main(String[] args) {
-        int[] a = {1, 2, 3};
-        a = new int[]{4, 5, 6};
+        int[] array = {1, 2, 3};
+        array = new int[]{4, 5, 6};
 
-        swap(a[0], a[1]);
-        IO.println(Arrays.toString(a));
-        swap(a);
-        IO.println(Arrays.toString(a));
+        swap(array[0], array[1]);
+        IO.println(Arrays.toString(array));
+        swap(array);
+        IO.println(Arrays.toString(array));
     }
 }

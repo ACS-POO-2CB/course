@@ -60,17 +60,19 @@ public class Animal {
 
     public static void main(String[] args) throws Throwable {
         System.out.println(noAnimals);
-        Animal rinocer = new Animal(200, true);
+        Animal rhino = new Animal(200, true);
 
-        Animal cangur = new Animal(100, true);
+        Animal hophop = new Animal(100, true);
 
-        System.out.println(rinocer + " " + cangur);
+        System.out.println(rhino + " " + hophop);
         System.out.println("Going wild with animals:" + noAnimals);
 
         Animal animal;
         for (int i = 0; i < Math.pow(10,7); i++) {
             animal = new Animal(200, true);
         }
+
+        Thread.sleep(1000); // Give the cleaner time to run
 
         System.out.println(noAnimals);
     }

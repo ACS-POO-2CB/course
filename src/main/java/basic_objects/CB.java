@@ -1,13 +1,13 @@
 package basic_objects;
 
-public class SeriaCB {
+public class CB {
     private Integer noStudents;
 
-    public SeriaCB() {
+    public CB() {
         this(120);
     }
 
-    private SeriaCB(int noStudents) {
+    private CB(int noStudents) {
         this.noStudents = noStudents;
     }
 
@@ -19,13 +19,13 @@ public class SeriaCB {
         this.noStudents = noStudents;
     }
 
-    public static void increment(SeriaCB x, int y) {
+    public static void increment(CB x, int y) {
         x.noStudents += y;
     }
 
     public void increment(int y) {
 //        this.noStudents += y;
-        SeriaCB.increment(this, y);
+        CB.increment(this, y);
     }
 
     public void increment() {
@@ -33,7 +33,7 @@ public class SeriaCB {
     }
 
     public static void main(String[] args) {
-        SeriaCB s1 = new SeriaCB();
+        CB s1 = new CB();
         s1.increment();
         increment(s1, 20);
         System.out.println(s1.getNoStudents());
