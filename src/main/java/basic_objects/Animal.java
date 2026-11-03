@@ -1,31 +1,25 @@
 package basic_objects;
 
-import java.awt.Color;
 import java.lang.ref.Cleaner;
 
 /**
- * O clasa foarte utila care descrie un animal
- *
- * @author Mihai Dascalu
- * @version 1.0
- * @since 1.0
+ * Example showing how to use Java's Cleaner API to release cleanup work
+ * when an object becomes phantom-reachable.
  */
 public class Animal {
 
-    private long weight;
-    boolean isHerbivor;
-    static int noAnimals;
+    private static final Cleaner CLEANER = Cleaner.create();
+    private static int animalCount;
 
-    // TODO add cleaner
-    private static final Cleaner cleaner = Cleaner.create();
-    private Cleaner.Cleanable cleanable;
+    private final long weight;
+    private boolean herbivore;
+    private final Cleaner.Cleanable cleanable;
 
-    public Animal(long weight, boolean isHerbivor) {
+    public Animal(long weight, boolean herbivore) {
         this.weight = weight;
-        this.isHerbivor = isHerbivor;
-        noAnimals++;
-        // Register the cleaning action
-        cleanable = cleaner.register(this, Animal::deleteAnimal); //method reference operator
+        this.herbivore = herbivore;
+        animalCount++;
+        this.cleanable = CLEANER.register(this, Animal::releaseAnimalResources);
     }
 
     public Animal(long weight) {
@@ -36,45 +30,47 @@ public class Animal {
         return weight;
     }
 
-    public void setWeight(long weight) {
-        this.weight = weight;
+    public boolean isHerbivore() {
+        return herbivore;
     }
 
-    public boolean isHerbivor() {
-        return isHerbivor;
+    public void setHerbivore(boolean herbivore) {
+        this.herbivore = herbivore;
     }
 
-    public void setHerbivor(boolean herbivor) {
-        isHerbivor = herbivor;
+    private static void releaseAnimalResources() {
+        animalCount--;
     }
 
-    public static void deleteAnimal() {
-        noAnimals--;
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "weight=" + weight +
+                ", herbivore=" + herbivore +
+                '}';
     }
 
-    //please do not use this method
-//    @Override
-//    protected void finalize() throws Throwable {
-//        deleteAnimal();
-//    }
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("Initial count: " + animalCount);
 
-    public static void main(String[] args) throws Throwable {
-        System.out.println(noAnimals);
         Animal rhino = new Animal(200, true);
+        Animal bunny = new Animal(100, true);
 
-        Animal hophop = new Animal(100, true);
+        System.out.println(rhino + " " + bunny);
+        System.out.println("Current animals: " + animalCount);
 
-        System.out.println(rhino + " " + hophop);
-        System.out.println("Going wild with animals:" + noAnimals);
+        rhino.cleanable.clean();
+        bunny.cleanable.clean();
 
-        Animal animal;
-        for (int i = 0; i < Math.pow(10,7); i++) {
-            animal = new Animal(200, true);
+        System.out.println("Animals after cleanup pass: " + animalCount);
+
+        for (int i = 0; i < 10_000_000; i++) {
+            new Animal(200, true);
         }
 
-        Thread.sleep(1000); // Give the cleaner time to run
+        Thread.sleep(1000);
 
-        System.out.println(noAnimals);
+       System.out.println("All present animals: " + animalCount);
     }
 }
 

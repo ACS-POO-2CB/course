@@ -1,38 +1,34 @@
 package basic_objects;
 
-//O clasa prea urata pentru a fi scrisa vreodata
+// This example demonstrates how object references work and how static fields are shared.
 public class Hexagon {
 
-    static int no;
+    // Counts how many Hexagon objects were created.
+    private static int createdHexagons;
 
     static {
-        no = -1;
+        createdHexagons = -1;
     }
 
     static {
-        no = 0;
+        createdHexagons = 0;
     }
 
-    int edge;
+    private int edge;
 
-    /**
-     * Default constructor
-     *
-     * @param edge
-     */
     public Hexagon(int edge) {
         this.edge = edge;
-        no++;
+        createdHexagons++;
     }
 
     public int getEdge() {
         return edge;
     }
 
-    public static void changeHexagon(Hexagon[] h) {
-        Hexagon h2 = new Hexagon(2);
-        h[0] = h2;
-        h[0].edge = 10;
+    public static void changeHexagon(Hexagon[] hexagons) {
+        Hexagon newHexagon = new Hexagon(2);
+        hexagons[0] = newHexagon;
+        hexagons[0].edge = 10;
     }
 
     @Override
@@ -43,16 +39,16 @@ public class Hexagon {
     }
 
     public static void main(String[] args) {
-        Hexagon h1 = new Hexagon(100);
-        Hexagon[] array = {h1,h1,h1};
-        //Arrays.asList(h1,h1).toArray(new Hexagon[]{})
+        Hexagon firstHexagon = new Hexagon(100);
+        Hexagon[] hexagons = {firstHexagon, firstHexagon, firstHexagon};
 
-        System.out.println(array[0]);
-        h1.edge =50;
-        System.out.println(array[2].edge);
+        System.out.println("Initial array: " + hexagons[0]);
 
-        Hexagon.changeHexagon(array);
-        System.out.println(array[0]);
-        System.out.println(no);
+        hexagons[0].edge = 50;
+        System.out.println("After modifying first / last hexagon edge: " + hexagons[2].edge);
+
+        Hexagon.changeHexagon(hexagons);
+        System.out.println("After replace: " + hexagons[0]);
+        System.out.println("Created hexagons: " + createdHexagons);
     }
 }

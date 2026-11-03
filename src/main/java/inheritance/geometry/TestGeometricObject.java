@@ -12,26 +12,23 @@ public class TestGeometricObject {
         GeometricObject[] vector = {geoObject1, geoObject2};
 
         // Display circle
-        System.out.println(geoObject1.getColor() + " " +
-                +geoObject1.getRadius() + " " +
-                geoObject1.getArea());
+        System.out.println(geoObject1.getColor() + " " + +geoObject1.getRadius() + " " + geoObject1.getArea());
 
         // Display rectangle
-        System.out.println(vector[1].getColor() + " "
-                        + ((Rectangle) vector[1]).getWidth() + " " +
-                        +((Rectangle) vector[1]).getHeight() + " "
+        System.out.println(vector[1].getColor() + " " + ((Rectangle) vector[1]).getWidth() + " " + +((Rectangle) vector[1]).getHeight() + " "
 //                +((Circle)vector[1]).getArea()
         );
 
         for (GeometricObject go : vector) {
             System.out.println(go.getColor() + " " + go.getDateCreated());
-            if (go instanceof Circle go1) {
-                //go1 = (Circle) go
-                System.out.println(go1.getArea() + " " + go1.getPerimeter());
-                go1.toString();
-            }
-            else if (go instanceof Rectangle)
-                System.out.println(((Rectangle) go).getArea() + " " + ((Rectangle) go).getPerimeter());
+            System.out.println(go.getArea() + " " + go.getPerimeter());
+//            if (go instanceof Circle go_aux) {
+//                //go_aux = (Circle) go
+//                System.out.println(go_aux.getArea() + " " + go_aux.getPerimeter());
+//            } else if (go instanceof Rectangle)
+//                System.out.println(((Rectangle) go).getArea() + " " + go.getPerimeter());
+
+
         }
     }
 }

@@ -9,7 +9,7 @@ public class Professor extends Human {
     }
 
     public void speak() {
-        System.out.println("10 ai facut foarte bine!");
+        System.out.println("10, you did great!");
         super.speak();
     }
 
@@ -34,8 +34,9 @@ class Human extends Entity {
         this.age = 2 * age;
     }
 
+    @Override
     public void speak() {
-        System.out.println("Urmeaza statia Politehnica cu peronul pe partea stanga!");
+        System.out.println("You are doing great!");
         super.speak();
     }
 }

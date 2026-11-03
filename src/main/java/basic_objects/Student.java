@@ -20,6 +20,7 @@ public class Student {
     static void main(String[] args) {
         Student student = new Student("John Doe");
         IO.println("Student name: " + student.getName());
+
         IO.println("Student name: " + rebel.getName());
     }
 }

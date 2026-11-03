@@ -1,7 +1,7 @@
 package inheritance.geometry;
 
-public class GeometricObject extends Object {
-    protected String color = "white";
+public class GeometricObject {
+    private String color = "white";
     private boolean filled;
     private final java.util.Date dateCreated;
 

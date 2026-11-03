@@ -4,7 +4,7 @@ public class CB {
     private Integer noStudents;
 
     public CB() {
-        this(120);
+        this(100);
     }
 
     private CB(int noStudents) {
@@ -19,8 +19,8 @@ public class CB {
         this.noStudents = noStudents;
     }
 
-    public static void increment(CB x, int y) {
-        x.noStudents += y;
+    public static void increment(CB series, int y) {
+        series.noStudents += y;
     }
 
     public void increment(int y) {
@@ -33,9 +33,9 @@ public class CB {
     }
 
     public static void main(String[] args) {
-        CB s1 = new CB();
-        s1.increment();
-        increment(s1, 20);
-        System.out.println(s1.getNoStudents());
+        CB cb = new CB();
+        cb.increment();
+        increment(cb, 20);
+        System.out.println(cb.getNoStudents());
     }
 }

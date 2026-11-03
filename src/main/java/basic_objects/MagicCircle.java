@@ -42,12 +42,12 @@ public class MagicCircle {
                 '}';
     }
 
-    static void doSomething(MagicCircle magicCircle) {
+    static void print(MagicCircle magicCircle) {
         System.out.println("Awesome!" + magicCircle.getRadius() + " " + magicCircle.getColor());
     }
 
-    void doSomething() {
-        doSomething(this);
+    void print() {
+        print(this);
     }
 
     public double getArea() {
@@ -56,6 +56,7 @@ public class MagicCircle {
 
     public static void main(String[] args) {
         MagicCircle circle1 = new MagicCircle();
+
         MagicCircle circle3, circle4, circle2;
         circle4 = circle3 = circle2 = new MagicCircle();
         circle3.setRadius(20);
@@ -67,7 +68,7 @@ public class MagicCircle {
         System.out.println(circle1 + " " + circle2);
         System.out.println(circle1==circle2);
 
-        circle3.doSomething();
+        circle3.print();
         System.out.println(circle3.color + " " + circle3.radius);
     }
 }
