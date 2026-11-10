@@ -25,4 +25,3 @@ public class OC {// outer class
         new OC().new IC().getX();
     }
 }
-// What is the result?

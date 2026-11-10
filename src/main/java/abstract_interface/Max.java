@@ -10,20 +10,19 @@ public class Max {
         return o2;
     }
 
-    // Max.java: Find a maximum object
     public static Comparable max(Comparable o1, Comparable o2) {
-        if (o1.getClass() != o2.getClass())
-            return null;
+//        if (o1.getClass() != o2.getClass())
+//            return null;
         if (o1.compareTo(o2) > 0)
             return o1;
         return o2;
     }
 
-//    public static <T extends Comparable<T>> T maxim (T o1, T o2) {
-//        if (o1.compareTo(o2) > 0)
-//            return o1;
-//        return o2;
-//    }
+    public static <T extends Comparable<T>> T maxim (T o1, T o2) {
+        if (o1.compareTo(o2) > 0)
+            return o1;
+        return o2;
+    }
 
     public static void main(String[] args) {
         Date d1 = new Date();
@@ -37,7 +36,8 @@ public class Max {
         System.out.println(s1.compareTo(s2));
         System.out.println(s2.compareTo(s1));
 
-//        System.out.println(max(s1, d2));
+//        System.out.println(max(s2, d1));
+//        System.out.println(max((Object)s1, (Object)d2));
         System.out.println(max(s1, d2.toString()));
 
 //        System.out.println(maxim(s1,d2));

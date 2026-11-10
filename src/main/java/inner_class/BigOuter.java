@@ -1,34 +1,33 @@
 package inner_class;
 
-class Broom {
-    static class B2 {
-        void goB2() {
-            System.out.println("Hi!!");
+class BaseOuter {
+    static class NestedMember {
+        void goBase() {
+            System.out.println("Hi from the base nested member!");
         }
     }
 }
 
-public class BigOuter extends Broom {
+public class BigOuter extends BaseOuter {
     static class Nest {
         void go() {
             System.out.println("Hi");
         }
     }
 
-    static class B2 extends Broom.B2 {
-        void go() {
-            System.out.println("Hi hi hi!");
+    static class NestedMember extends BaseOuter.NestedMember {
+        void goDerived() {
+            System.out.println("Hi from the derived nested member!");
         }
     }
 
     public static void main(String[] args) {
         BigOuter.Nest n = new BigOuter.Nest(); // both class names
         n.go();
-        BigOuter.B2 b2 = new BigOuter.B2(); // access the enclosed class
-        b2.goB2();
-        b2.go();
+        BigOuter.NestedMember member = new BigOuter.NestedMember();
+        member.goBase();
+        member.goDerived();
     }
 }
-
 
 
